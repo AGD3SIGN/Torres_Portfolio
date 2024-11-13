@@ -1,0 +1,39 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Fjalla+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* 1. Box Sizing & remove default margin, padding*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. Set default font and line-height on body & setting universal smoothing */
+body {
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* 4. Reset lists */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 5. Basic layout element reset */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
