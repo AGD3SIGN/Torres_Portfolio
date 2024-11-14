@@ -20,11 +20,11 @@ body {
 
 /* 4. Reset lists */
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* 5. Basic layout element reset */
@@ -36,4 +36,151 @@ svg {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+table {
+  width: 100%;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  margin: 1rem 0;
+}
+
+/* 6. Accessibility-friendly focus outline */
+:focus-visible {
+  outline: 2px solid #005fcc; /* High-contrast blue for visibility */
+  outline-offset: 3px;
+}
+
+/* 7. Remove animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Root Variables */
+:root {
+  /* Colors */
+  --dark: #0e1111;
+  --light: #fff;
+  --lightblue: #d3e0ff;
+  --purple: #6352e5;
+  --green: #40f39a;
+
+  /* Font Sizes */
+  --fs-xxs: 0.75rem; /* Extra-extra small font size */
+  --fs-xs: 0.875rem; /* Extra small font size */
+  --fs-sm: 1rem; /* Small font size, default body text */
+  --fs-md: 1.125rem; /* Medium font size */
+  --fs-lg: 1.25rem; /* Large font size */
+  --fs-xl: 1.5rem; /* Extra-large font size */
+  --fs-xxl: 2rem; /* Extra-extra-large font size */
+  --fs-xxxl: 3rem; /* Extra-extra-extra-large font size */
+
+  /* Responsive Font Scaling (if needed) */
+  --fs-sm-responsive: clamp(0.9rem, 1vw + 0.2rem, 1rem);
+  --fs-lg-responsive: clamp(1.25rem, 2vw + 0.5rem, 1.5rem);
+
+  /* Line Heights */
+  --lh-sm: 1.2; /* Tighter line height for headers */
+  --lh-md: 1.5; /* Standard line height for paragraphs */
+  --lh-lg: 1.75; /* Looser line height for readability */
+
+  /* Font Weights */
+  --fw-light: 300; /* Light font weight */
+  --fw-regular: 400; /* Regular (normal) font weight */
+  --fw-medium: 500; /* Medium font weight */
+  --fw-semibold: 600; /* Semi-bold font weight */
+  --fw-bold: 700; /* Bold font weight */
+  --fw-black: 900; /* Black font weight for emphasis */
+
+  /* Text Transformations */
+  --tt-uppercase: uppercase;
+  --tt-lowercase: lowercase;
+  --tt-capitalize: capitalize;
+}
+
+/* Header and Navigation Menu */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--dark);
+  position: relative;
+}
+
+header a[aria-label="Home"] {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--light);
+}
+
+/* Navigation Styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+}
+
+/* Hide Menu on Small Screens */
+nav ul {
+  display: none; /* Hidden by default on small screens */
+  flex-direction: column; /* Stack items vertically when shown */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--dark);
+  padding: 1rem;
+  width: 200px;
+  border-radius: var(--border-radius-md, 8px); /* Optional, border radius variable */
+}
+
+/* Show Menu Button */
+.menu-open {
+  font-size: var(--fs-xl);
+  color: var(--light);
+  cursor: pointer;
+  display: block; /* Visible on small screens */
+}
+
+/* Hide Close Button by Default */
+.menu-close {
+  display: none;
+  font-size: var(--fs-xl);
+  color: var(--light);
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Larger Screens: Show Menu and Hide Toggle Buttons */
+@media (min-width: 768px) {
+  nav ul {
+    display: flex; /* Horizontal layout on larger screens */
+    flex-direction: row;
+    position: static;
+    background: none;
+    width: auto;
+    padding: 0;
+  }
+
+  /* Hide Toggle Buttons */
+  .menu-open,
+  .menu-close {
+    display: none;
+  }
 }
