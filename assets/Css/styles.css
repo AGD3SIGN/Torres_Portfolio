@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Fjalla+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Fjalla+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Box Sizing & remove default margin, padding*/
 *,
@@ -33,7 +33,6 @@ button {
   all: unset;
   cursor: pointer;
 }
-
 
 /* Basic layout element reset */
 img,
@@ -72,15 +71,14 @@ hr {
 
 /* Root Variables */
 :root {
-
   /* Colors */
   --dark: #0e1111;
-  --light: #F5F5F5;
+  --light: #f5f5f5;
   --dark-grey: #424242;
   --dark-teal: #229799;
-  --teal: #48CFCB;
- 
-/* Typography Sizes */
+  --teal: #48cfcb;
+
+  /* Typography Sizes */
   --h1: 3rem;
   --h2: 2.5rem;
   --h3: 2rem;
@@ -88,7 +86,6 @@ hr {
   --h5: 1.5rem;
   --h6: 1.25rem;
   --p: 1rem;
-
 }
 
 /* PreLoader */
@@ -98,11 +95,11 @@ hr {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--dark); 
+  background-color: var(--dark);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; 
+  z-index: 9999;
 }
 
 .preloader.hidden {
@@ -126,7 +123,7 @@ hr {
   background-color: var(--light);
   left: 15%;
   transform-origin: 50%;
-  animation: circle7124 .5s alternate infinite ease;
+  animation: circle7124 0.5s alternate infinite ease;
 }
 
 @keyframes circle7124 {
@@ -150,27 +147,27 @@ hr {
 
 .circle:nth-child(2) {
   left: 45%;
-  animation-delay: .2s;
+  animation-delay: 0.2s;
 }
 
 .circle:nth-child(3) {
   left: auto;
   right: 15%;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
 }
 
 .shadow {
   width: 20px;
   height: 4px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, 0.2);
   position: absolute;
   top: 62px;
   transform-origin: 50%;
   z-index: -1;
   left: 15%;
   filter: blur(1px);
-  animation: shadow046 .5s alternate infinite ease;
+  animation: shadow046 0.5s alternate infinite ease;
 }
 
 @keyframes shadow046 {
@@ -180,90 +177,27 @@ hr {
 
   40% {
     transform: scaleX(1);
-    opacity: .7;
+    opacity: 0.7;
   }
 
   100% {
-    transform: scaleX(.2);
-    opacity: .4;
+    transform: scaleX(0.2);
+    opacity: 0.4;
   }
 }
 
 .shadow:nth-child(4) {
   left: 45%;
-  animation-delay: .2s
+  animation-delay: 0.2s;
 }
 
 .shadow:nth-child(5) {
   left: auto;
   right: 15%;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
 }
 
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
-  background-color: hsl(0, 0%, 12%);
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.5s ease;
-}
-
-.navbar .logo a {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--light);
-  margin-left: 12px;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.menu-links {
-  display: flex;
-  gap: 24px;
-  border-right: 1px solid #999999;
-  padding-inline: 24px;
-}
-
-.menu-links a {
-  font-weight: 500;
-  color: #999999;
-  padding: 8px 16px;
-}
-.menu-links a:hover {
-  color: white;
-}
-.contact {
-  font-weight: 500;
-  padding: 12px 22px;
-  background-color: transparent;
-  color: #999999;
-  border-radius: 10px;
-  border: 2px solid var(--teal);
-  transition: 0.2s;
-}
-.contact:hover {
-  background-color: var(--teal);
-  color: var(--light);
-}
-
-.menu-btn {
-  font-size: 32px;
-  color: var(--light);
-  display: none;
-  cursor: pointer;
-}
+/* Sections */
 
 section {
   height: 100vh;
@@ -280,17 +214,18 @@ section > h1 {
   text-wrap: balance;
 }
 
-@media (max-width: 53rem) {
-  .menu {
-    display: none;
-    z-index: 1000;
-  }
-
-  .menu-btn {
-    display: block;
-    position: absolute; 
-    right: 20px; 
-    top: 30px; 
-  }
+/* Navbar */
+header {
+  background-color: var(--dark-grey);
+  width: 100%;
+  top: 0;
+  z-index: 10000;
 }
 
+nav {
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
