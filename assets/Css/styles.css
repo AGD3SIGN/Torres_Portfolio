@@ -1,14 +1,13 @@
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Fjalla+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* Box Sizing & remove default margin, padding*/
+/* ========== Base CSS ========== */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -16,13 +15,10 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--dark);
-  color: var(--light);
+  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Reset lists */
 ul {
   list-style: none;
 }
@@ -34,7 +30,6 @@ button {
   cursor: pointer;
 }
 
-/* Basic layout element reset */
 img,
 picture,
 video,
@@ -55,13 +50,11 @@ hr {
   margin: 1rem 0;
 }
 
-/* Accessibility-friendly focus outline */
 :focus-visible {
-  outline: 2px solid #005fcc; /* High-contrast blue for visibility */
+  outline: 2px solid var(--teal);
   outline-offset: 3px;
 }
 
-/* Remove animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none;
@@ -69,7 +62,7 @@ hr {
   }
 }
 
-/* Root Variables */
+/* ========== Root Variables ========== */
 :root {
   /* Colors */
   --dark: #0e1111;
@@ -86,9 +79,36 @@ hr {
   --h5: 1.5rem;
   --h6: 1.25rem;
   --p: 1rem;
+
+  /* Font Weight */
+  --fw-thin: 100;
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
 }
 
-/* PreLoader */
+/* ========== Reusable CSS ========== */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-grey);
+}
+
+section > h1 {
+  font-size: 4rem;
+  font-weight: var(--fw-medium);
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* ========== Preloader ========== */
 .preloader {
   position: fixed;
   top: 0;
@@ -197,35 +217,122 @@ hr {
   animation-delay: 0.3s;
 }
 
-/* Sections */
-
-section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(169, 169, 169);
-}
-
-section > h1 {
-  font-size: 4rem;
-  font-weight: 500;
-  text-align: center;
-  text-wrap: balance;
-}
-
-/* Navbar */
-header {
-  background-color: var(--dark-grey);
-  width: 100%;
+/* ========== Navbar ========== */
+.navbar {
+  position: fixed;
   top: 0;
-  z-index: 10000;
-}
-
-nav {
-  margin: 0 auto;
-  padding: 1rem;
+  left: 0;
+  width: 100%;
+  background-color: hsl(0, 0%, 12%);
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.menu-btn {
+  font-size: 32px;
+  color: var(--light);
+  display: none;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .logo i {
+  color: var(--teal);
+  font-size: 20px;
+}
+
+.navbar .logo a {
+  font-size: 20px;
+  font-weight: var(--fw-bold);
+  color: var(--light);
+  margin-left: 10px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Initially off-screen */
+  width: 250px; /* Menu width */
+  height: 100%;
+  background-color: hsl(0, 0%, 12%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.3s ease-in-out;
+  padding-top: 60px; /* Adjust based on logo size */
+}
+
+.menu-links {
+  display: flex;
+  gap: 24px;
+  border-right: 1px solid var(--teal);
+  padding-inline: 24px;
+}
+
+.menu-links a {
+  font-weight: var(--fw-medium);
+  color: var(--light);
+  padding: 8px 16px;
+}
+
+.menu-links a:hover {
+  color: var(--teal);
+}
+
+.cta-btn {
+  font-weight: var(--fw-medium);
+  padding: 8px 8px;
+  background-color: transparent;
+  color: var(--light);
+  border-radius: 10px;
+  border: 2px solid var(--teal);
+  transition: 0.2s;
+}
+.cta-btn:hover {
+  background-color: var(--teal);
+  color: var(--dark);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none; /* Hide menu items by default */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    padding: 0;
+    gap: 10px;
+    border-right: none;
+  }
+
+  .menu-btn {
+    display: block; 
+  }
+
+  .menu {
+    left: -100%;
+  }
+  
+  .menu.open {
+    left: 0; 
+  }
+
+  .menu-links a {
+    font-size: 18px;
+    text-align: center; 
+  }
 }

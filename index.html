@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio</title>
-    <!-- REMIXICON -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+    <!-- BOXICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="assets/Css/styles.css" />
   </head>
@@ -24,34 +27,39 @@
     </div>
 
     <!-- Navbar -->
-    <header>
-      <nav>
-          <a href="#" class="logo"><img src="assets/images/logo.svg" alt="Logo"></a>
-          <button class="hamburger" aria-label="Toggle navigation menu">
-              <span></span>
-              <span></span>
-              <span></span>
-          </button>
-          <ul class="nav-menu">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
-          </ul>
-      </nav>
-  </header>
 
-     <section>
-      <h1>Scroll Down to<br>hide Navigation</h1>
-    </section>
+    <nav class="navbar">
+      <div class="logo">
+        <i class='bx bxs-dashboard'></i>
+        <a href="#">TORRES</a>
+      </div>
 
-    <section>
-      <h1>Scroll Up to<br>show Navigation</h1>
-    </section>
+      <div class="menu">
+        <div class="menu-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Blog</a>
+        </div>
+        <button class="cta-btn">Hire Me!</button>
+      </div>
+
+      <div class="menu-btn">
+        <i class="bx bx-menu"></i>
+      </div>
+    </nav>
+
+    <!-- Navbar End-->
 
     <!-- MAIN -->
     <main>
-      
+      <section>
+        <h1>Scroll Down to<br />hide Navigation</h1>
+      </section>
+
+      <section>
+        <h1>Scroll Up to<br />show Navigation</h1>
+      </section>
     </main>
     <!-- MAIN END -->
     <script src="assets/js/main.js"></script>
