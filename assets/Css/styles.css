@@ -217,122 +217,27 @@ section > h1 {
   animation-delay: 0.3s;
 }
 
-/* ========== Navbar ========== */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* ========== Header/Navbar ========== */
+header {
   width: 100%;
-  background-color: hsl(0, 0%, 12%);
-  padding: 10px 20px;
+  padding: 25px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: transform 0.5s ease;
-}
-
-.menu-btn {
-  font-size: 32px;
-  color: var(--light);
-  display: none;
-  cursor: pointer;
 }
 
 .logo {
+  width: 120px;
+}
+
+.navMenu {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 25px;
 }
 
-.navbar .logo i {
-  color: var(--teal);
-  font-size: 20px;
-}
-
-.navbar .logo a {
-  font-size: 20px;
-  font-weight: var(--fw-bold);
-  color: var(--light);
-  margin-left: 10px;
-}
-
-.menu {
-  position: fixed;
-  top: 0;
-  left: -100%; /* Initially off-screen */
-  width: 250px; /* Menu width */
-  height: 100%;
-  background-color: hsl(0, 0%, 12%);
+.navList {
+  background-color: green;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: left 0.3s ease-in-out;
-  padding-top: 60px; /* Adjust based on logo size */
-}
-
-.menu-links {
-  display: flex;
-  gap: 24px;
-  border-right: 1px solid var(--teal);
-  padding-inline: 24px;
-}
-
-.menu-links a {
-  font-weight: var(--fw-medium);
-  color: var(--light);
-  padding: 8px 16px;
-}
-
-.menu-links a:hover {
-  color: var(--teal);
-}
-
-.cta-btn {
-  font-weight: var(--fw-medium);
-  padding: 8px 8px;
-  background-color: transparent;
-  color: var(--light);
-  border-radius: 10px;
-  border: 2px solid var(--teal);
-  transition: 0.2s;
-}
-.cta-btn:hover {
-  background-color: var(--teal);
-  color: var(--dark);
-}
-
-/* Media Queries */
-
-@media screen and (max-width: 768px) {
-  .menu {
-    display: none; /* Hide menu items by default */
-    flex-direction: column; /* Stack items vertically */
-    width: 100%;
-  }
-
-  .menu-links {
-    display: flex;
-    flex-direction: column; /* Stack links vertically */
-    padding: 0;
-    gap: 10px;
-    border-right: none;
-  }
-
-  .menu-btn {
-    display: block; 
-  }
-
-  .menu {
-    left: -100%;
-  }
-  
-  .menu.open {
-    left: 0; 
-  }
-
-  .menu-links a {
-    font-size: 18px;
-    text-align: center; 
-  }
+  gap: 15px;
 }
