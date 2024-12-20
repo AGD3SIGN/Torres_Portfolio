@@ -1,107 +1,135 @@
 /* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Fjalla+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* ========== Base CSS ========== */
+/* ========== CSS RESET ========== */
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  line-height: 1.6;
-  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 ul {
   list-style: none;
 }
 
-a,
-button {
+li > a {
   text-decoration: none;
-  all: unset;
-  cursor: pointer;
 }
 
-img,
-picture,
-video,
-canvas,
+img, 
+picture, 
+video, 
+canvas, 
 svg {
   display: block;
   max-width: 100%;
-  height: auto;
 }
 
-table {
-  width: 100%;
+input, 
+button, 
+textarea, 
+select {
+  font: inherit;
 }
 
-hr {
-  border: none;
-  height: 1px;
-  margin: 1rem 0;
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  overflow-wrap: break-word;
 }
 
-:focus-visible {
-  outline: 2px solid var(--teal);
-  outline-offset: 3px;
+p {
+  text-wrap: pretty;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none;
-    transition: none;
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  text-wrap: balance;
+}
+
+/* Reduce Motion */
+@media (prefers-reduced-motion: reduce){
+  html:focus-within {
+      scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+      transition: none;
   }
 }
+
+
 
 /* ========== Root Variables ========== */
 :root {
   /* Colors */
-  --dark: #0e1111;
-  --light: #f5f5f5;
-  --dark-grey: #424242;
-  --dark-teal: #229799;
-  --teal: #48cfcb;
+  --dark: hsl(180, 10%, 6%);
+  --light: hsl(0, 0%, 96%);
+  --dark-grey: hsl(0, 0%, 26%);
+  --dark-teal: hsl(181, 64%, 37%);
+  --teal: hsl(178, 58%, 55%);
 
-  /* Typography Sizes */
-  --h1: 3rem;
-  --h2: 2.5rem;
-  --h3: 2rem;
-  --h4: 1.75rem;
-  --h5: 1.5rem;
-  --h6: 1.25rem;
-  --p: 1rem;
 
-  /* Font Weight */
-  --fw-thin: 100;
-  --fw-extra-light: 200;
-  --fw-light: 300;
-  --fw-normal: 400;
-  --fw-medium: 500;
-  --fw-semi-bold: 600;
-  --fw-bold: 700;
-  --fw-extra-bold: 800;
-  --fw-black: 900;
+  /* ==== Font and Typography === */
+  --body-ff: 'Poppins', sans-serif;
+
+  /* === Font Sizes === */
+  --h1-fs: 2.85rem;
+  --h2-fs: 2.25rem;
+  --h3-fs: 1.97rem;
+  --h4-fs: 1.43rem;
+  --h5-fs: 1.13rem;
+
+  --xl-fs: 1.48rem;
+  --l-fs: 1.23rem;
+  --m-fs: 1.18rem;
+  --b-fs: 1.1rem;
+  --s-fs: 1.07rem;
+  --xs-fs: .98rem;
+
+  /* === Font Weights === */
+  --fw-light: ;
+  --fw-regular: ;
+  --fw-medium: ;
+  --fw-semi-bold: ;
+  --fw-bold: ;
+  
+  /* === Laying Order (Z-index) === */
+  --z-minus: ;
+  --z-base: ;
+  --z-low: ;
+  --z-high: ;
+  --z-content: ;
+  --z-tooltip: ;
+  --z-fixed: ;
+  --z-overlay: ;
+
 }
 
 /* ========== Reusable CSS ========== */
 section {
   min-height: 100vh;
-}
-
-main {
-  padding-block: min(20vh, 2rem);
-  width: calc(min(70rem, 90%));
-  margin-inline: auto;
-  
 }
 
 /* ========== Preloader ========== */
@@ -214,3 +242,8 @@ main {
 }
 
 /* ========== Header/Navbar ========== */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
