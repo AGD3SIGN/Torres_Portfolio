@@ -109,27 +109,30 @@ h6 {
   --xs-fs: .98rem;
 
   /* === Font Weights === */
-  --fw-light: ;
-  --fw-regular: ;
-  --fw-medium: ;
-  --fw-semi-bold: ;
-  --fw-bold: ;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
   
   /* === Laying Order (Z-index) === */
-  --z-minus: ;
-  --z-base: ;
-  --z-low: ;
-  --z-high: ;
-  --z-content: ;
-  --z-tooltip: ;
-  --z-fixed: ;
-  --z-overlay: ;
+  --z-minus: -1;
+  --z-base: 0;
+  --z-low: 1;
+  --z-high: 10;
+  --z-content: 100;
+  --z-tooltip: 1000;
+  --z-fixed: 1110;
+  --z-overlay: 9999;
 
 }
 
 /* ========== Reusable CSS ========== */
+
+
 section {
   min-height: 100vh;
+  background-color: var(--dark);
 }
 
 /* ========== Preloader ========== */
@@ -241,9 +244,22 @@ section {
   animation-delay: 0.3s;
 }
 
-/* ========== Header/Navbar ========== */
-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+/*=============== HEADER & NAV ===============*/
+
+
+/* ========== Hero Section ========== */
+.hero {
+  min-height: 100vh;
 }
+
+.about {
+  min-height: 100vh;
+}
+
+
+
+
+
+
+
+
