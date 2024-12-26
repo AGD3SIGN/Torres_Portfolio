@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* ========== Root Variables ========== */
 :root {
@@ -13,8 +13,8 @@
   --primary: hsl(5, 100%, 69%);
 
   /* ==== Font and Typography === */
-  --body-ff: "Source Code Pro", sans-serif;
-  --heading-ff: "Oswald", sans-serif;
+  --body-ff: 'Poppins', sans-serif;
+  --heading-ff: 'Montserrat', sans-serif;
 
   /* === Font Sizes === */
   --h1-fs: 2.85rem;
@@ -130,6 +130,23 @@ h6 {
 }
 
 /* ========== Reusable CSS ========== */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.home-container {
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .container {
   max-width: 1150px;
   margin-inline: 1.5rem;
@@ -254,7 +271,7 @@ section {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: var(--lightest);
+  background-color: transparent;
   z-index: var(--z-high);
 }
 
@@ -448,35 +465,155 @@ section {
     align-items: center;
     column-gap: 3.5rem;
   }
+
+  .nav_social {
+    display: none;
+  }
 }
 
-/* ========== Hero Section ========== */
-.hero {
-  min-height: 100vh;
-  margin-top: var(--header-height);
-  display: flex;
-  align-content: center;
+/* ============================== 
+Hero Section 
+============================== */
+.home-container {
+  height: 100vh;
 }
 
- .hero_info {
+.home-container .site-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2rem 2rem;
-  column-gap: 2rem;
-  /* background-color: green; */
 }
 
-.hero_info img {
-  width: 80%;
-  height: auto;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 25px;
-  border-top-right-radius: 25px;
+.avatar-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 25px;
 }
 
-
-.about {
-  min-height: 100vh;
+.avatar-img {
+  position: relative;
+  width: 425px;
+  height: 425px;
 }
+
+.avatar-img img {
+  position: absolute;
+  width: 100%;
+}
+
+.home-social {
+  position: absolute;
+  left: 0;
+}
+
+.home-social span {
+  position: absolute;
+  left: 10px;
+  color: var(--light);
+  font-size: var(--s-fs);
+  white-space: nowrap;
+  transform: rotateZ(-90deg);
+  transform-origin: left;
+}
+
+.home-social .social-line {
+  background: var(--light);
+  width: 1px;
+  height: 100px;
+  margin: 37px 0 25px 10px;
+}
+
+.home-social .social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-social .social-icons li a {
+  color: var(--light);
+  font-size: var(--l-fs);
+  transition: .3s;
+}
+
+.home-social .social-icons li a:hover {
+  color: var(--primary);
+  margin-left: 5px;
+}
+
+.avatar-container .hire-btn-01 {
+  display: none;
+}
+
+.avatar-info {
+  position: relative;
+}
+
+.avatar-info .text-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.avatar-info .hello-text {
+  font-size: var(--l-fs);
+  font-weight: var(--fw-semi-bold);
+}
+
+.avatar-info .my-name {
+  color: var(--primary);
+  font-size: var(--h1-fs);
+  font-weight: var(--fw-bold);
+}
+
+.avatar-info .about-me {
+  font-size: var(--l-fs);
+  font-weight: var(--fw-semi-bold);
+  margin-bottom: 35px ;
+}
+
+.home-scroll-btn {
+  position: absolute;
+  right: 0;
+  color: var(--light);
+  display: grid;
+  justify-items: center;
+  row-gap: 3px;
+  animation: up-down 1.5s linear infinite;
+  animation-delay: 1.85s;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(8px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+.home-scroll-btn:hover {
+  color: var(--primary);
+}
+
+.home-scroll-btn div {
+  font-size: var(--s-fs);
+  font-weight: var(--fw-light);
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  white-space: nowrap;
+  transform: rotate(180deg);
+  margin-top: 7px;
+}
+
+.home-scroll-btn i {
+  font-size: 2rem;
+}
+
+/* ============================== 
+About Section 
+============================== */
