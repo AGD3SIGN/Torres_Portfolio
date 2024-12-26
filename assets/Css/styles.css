@@ -141,7 +141,8 @@ h6 {
   height: 100%;
 }
 
-.home-container {
+.home-container,
+.about-container {
   max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
@@ -295,6 +296,12 @@ section {
   color: var(--dark);
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.header-scrolled {
+  background-color: var(--lightest);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
 
 /* Navigation for mobile devices */
