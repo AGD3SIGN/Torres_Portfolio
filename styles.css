@@ -23,12 +23,12 @@ body {
     --clr-light-a0: #ffffff;
 
     /** Theme primary colors */
-    --clr-primary-a0: #e2403e;
-    --clr-primary-a10: #e95a51;
-    --clr-primary-a20: #ef7165;
-    --clr-primary-a30: #f5877a;
-    --clr-primary-a40: #f99b8f;
-    --clr-primary-a50: #fdb0a4;
+    --clr-primary-a0: #03c988;
+    --clr-primary-a10: #45d095;
+    --clr-primary-a20: #65d6a2;
+    --clr-primary-a30: #7fdcaf;
+    --clr-primary-a40: #97e3bc;
+    --clr-primary-a50: #ade9c9;
 
     /** Theme surface colors */
     --clr-surface-a0: #121212;
@@ -39,12 +39,13 @@ body {
     --clr-surface-a50: #8b8b8b;
 
     /** Theme tonal surface colors */
-    --clr-surface-tonal-a0: #251917;
-    --clr-surface-tonal-a10: #3a2e2c;
-    --clr-surface-tonal-a20: #504543;
-    --clr-surface-tonal-a30: #665c5b;
-    --clr-surface-tonal-a40: #7e7574;
-    --clr-surface-tonal-a50: #978f8e;
+    --clr-surface-tonal-a0: #18221d;
+    --clr-surface-tonal-a10: #2d3732;
+    --clr-surface-tonal-a20: #444d48;
+    --clr-surface-tonal-a30: #5c645f;
+    --clr-surface-tonal-a40: #757c78;
+    --clr-surface-tonal-a50: #8f9491;
+
 }
 
 /* Gradient & layer Blur Effect */
@@ -110,45 +111,34 @@ nav a:hover {
     color: var(--clr-primary-a0);
 }
 
-/* From Uiverse.io by WhiteNervosa */
+/* From Uiverse.io by niat786 */
 button {
-    font-size: 18px;
-    color: var(--clr-primary-a10);
-    font-family: inherit;
-    font-weight: 800;
-    cursor: pointer;
-    position: relative;
-    border: none;
-    background: none;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: color;
+    border-radius: .25rem;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: #fff;
+    -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+    height: 40px;
+    font-size: 0.7rem;
+    line-height: 14px;
+    letter-spacing: 1.2px;
+    transition: .2s .1s;
+    background-image: linear-gradient(90deg, var(--clr-surface-a0), var(--clr-primary-a0));
+    border: 0 solid;
+    overflow: hidden;
 }
 
-button:focus,
 button:hover {
-    color: var(--clr-light-a0);
+    cursor: pointer;
+    transition: all .3s ease-in;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 
-button:focus:after,
-button:hover:after {
-    width: 100%;
-    left: 0%;
-}
-
-button:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: var(--clr-primary-a10);
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
-}
 
 /* Main Content */
 main {
@@ -216,8 +206,12 @@ main {
     text-shadow: 0 0 10px rgba(128, 128, 128, 00.418);
 }
 
+.content p {
+    margin-bottom: 2rem;
+}
+
 .description {
-    font-size: 1.2rem;   
+    font-size: 1.2rem;
     letter-spacing: 0.05em;
     max-width: 35rem;
     color: var(--clr-light-a0);
@@ -234,4 +228,3 @@ main {
     right: -20%;
     pointer-events: none;
 }
-
