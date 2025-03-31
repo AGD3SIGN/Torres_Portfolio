@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="Portfolio of Brandon Torres - Web Developer & Designer">
+  <meta name="author" content="Brandon Torres">
+  <title>Brandon Torres | Portfolio</title>
   <!-- Styling Css -->
   <link rel="stylesheet" href="styles.css">
   <!-- Remixicons -->
@@ -15,44 +17,55 @@
   <img class="image-gradient" src="images/gradient.png" alt="gradient">
   <div class="layer-blur"></div>
 
-  <!-- CONTENT -->
-  <div class="container">
-    <header>
-      <h1 class="logo">AGD3SIGN</h1>
-      <nav>
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Resume</a>
-        <a href="#">Contact</a>
-      </nav>
+  <!-- Navigation -->
+  <header class="nav-container">
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <!-- CTA Button -->
-      <button>Lets Talk!</button>
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <h1 id="hero-title">Hey, I'm Brandon Torres!</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, non?</p>
+    </div>
+    <div class="hero-3d">
+      <spline-viewer class="robot" url="https://prod.spline.design/1qfJxXe7oNRgdZKK/scene.splinecode"></spline-viewer>
+    </div>
+  </section>
 
-    </header>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>My Work</h2>
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>Project One</h3>
+        <p>Description of the project.</p>
+      </article>
+      <article class="project-card">
+        <h3>Project Two</h3>
+        <p>Description of the project.</p>
+      </article>
+    </div>
+  </section>
 
-    <main>
-      <div class="content">
-        <div class="tag-box">
-          <div class="tag">Lorem ipsum dolor sit amet.</div>
-        </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Brandon Torres. All rights reserved.</p>
+</footer>
 
-        <h1>Lorem, ipsum. <br> Lorem, ipsum dolor.</h1>
-        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, recusandae! Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Fuga, recusandae!</p>
-        <div class="btn-group">
-          <button class="portfolio-btn">View Work</button>
-        </div>
-
-      </div>
-  </div>
-  </main>
-
-  <spline-viewer class="disc" url="https://prod.spline.design/gW0Zak1Fk6zEsvnv/scene.splinecode"></spline-viewer>
 
 </body>
 
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+
+
+
 
 
 

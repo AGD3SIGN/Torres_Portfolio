@@ -1,231 +1,79 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+ *,
+ *::before,
+ *::after {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     list-style: none;
+     text-decoration: none;
+ }
 
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: var(--clr-dark-a0);
-    color: var(--clr-light-a0);
-    min-height: 100vh;
-    line-height: 1.5;
-}
+ html {
+     scroll-behavior: smooth;
+ }
 
-/* ===== Root Variables ===== */
+ body {
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     background-color: var(--background-color);
+     color: var(--text-color);
+     line-height: 1.6;
+ }
 
-:root {
+ /* ===== Root Variables ===== */
 
-    /** Base colors */
-    --clr-dark-a0: #000000;
-    --clr-light-a0: #ffffff;
+ :root {
+     --background-color: #030406;
+     --text-color: #f2f4f3;
+     --primary-color: #00dda6;
+     --card-bg: #121212;
+     --hover-transition: 0.3s ease-in-out;
+ }
 
-    /** Theme primary colors */
-    --clr-primary-a0: #03c988;
-    --clr-primary-a10: #45d095;
-    --clr-primary-a20: #65d6a2;
-    --clr-primary-a30: #7fdcaf;
-    --clr-primary-a40: #97e3bc;
-    --clr-primary-a50: #ade9c9;
+ /* Spline Robot */
+ .robot {
+     position: absolute;
+     top: 0;
+     right: -20%;
+ }
 
-    /** Theme surface colors */
-    --clr-surface-a0: #121212;
-    --clr-surface-a10: #282828;
-    --clr-surface-a20: #3f3f3f;
-    --clr-surface-a30: #575757;
-    --clr-surface-a40: #717171;
-    --clr-surface-a50: #8b8b8b;
+ /* Gradient & layer Blur Effect */
+ .image-gradient {
+     position: absolute;
+     top: 0;
+     right: 0;
+     opacity: 0.5;
+     z-index: -1;
+ }
 
-    /** Theme tonal surface colors */
-    --clr-surface-tonal-a0: #18221d;
-    --clr-surface-tonal-a10: #2d3732;
-    --clr-surface-tonal-a20: #444d48;
-    --clr-surface-tonal-a30: #5c645f;
-    --clr-surface-tonal-a40: #757c78;
-    --clr-surface-tonal-a50: #8f9491;
+ .layer-blur {
+     height: 0;
+     width: 30rem;
+     position: absolute;
+     top: 20%;
+     right: 0;
+     box-shadow: 0 0 700px 15px var(--clr-light-a0);
+     rotate: -30deg;
+     z-index: -1;
+ }
 
-}
+ /* Navigation */
+ .nav-container {
+     display: flex;
+     justify-content: center;
+     padding: 10px 0;
+ }
 
-/* Gradient & layer Blur Effect */
-.image-gradient {
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0.5;
-    z-index: -1;
-}
+ .nav-links {
+     display: flex;
+     gap: 2rem;
+ }
 
-.layer-blur {
-    height: 0;
-    width: 30rem;
-    position: absolute;
-    top: 20%;
-    right: 0;
-    box-shadow: 0 0 700px 15px var(--clr-light-a0);
-    rotate: -30deg;
-    z-index: -1;
-}
+ .nav-links a {
+     color: var(--text-color);
+     font-weight: bold;
+     transition: color var(--hover-transition);
+ }
 
-/* Container */
-.container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5rem;
-    z-index: 999;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 300;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    margin-left: -5%;
-}
-
-nav a {
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-    transition: color 0.2s ease;
-    text-decoration: none;
-    color: inherit;
-    z-index: 999;
-}
-
-nav a:hover {
-    color: var(--clr-primary-a0);
-}
-
-/* From Uiverse.io by niat786 */
-button {
-    border-radius: .25rem;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 400;
-    padding-left: 25px;
-    padding-right: 25px;
-    color: #fff;
-    -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
-    clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
-    height: 40px;
-    font-size: 0.7rem;
-    line-height: 14px;
-    letter-spacing: 1.2px;
-    transition: .2s .1s;
-    background-image: linear-gradient(90deg, var(--clr-surface-a0), var(--clr-primary-a0));
-    border: 0 solid;
-    overflow: hidden;
-}
-
-button:hover {
-    cursor: pointer;
-    transition: all .3s ease-in;
-    padding-right: 30px;
-    padding-left: 30px;
-}
-
-
-/* Main Content */
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: calc(90vh - 6rem);
-}
-
-.content {
-    max-width: 40rem;
-    margin-left: 10%;
-    z-index: 999;
-}
-
-.tag-box {
-    position: relative;
-    width: 18rem;
-    height: 2.5rem;
-    border-radius: 50px;
-    background: linear-gradient(to right,
-            var(--clr-primary-a0),
-            var(--clr-primary-a10),
-            var(--clr-primary-a20),
-            var(--clr-primary-a30),
-            var(--clr-primary-a40),
-            var(--clr-primary-a40),
-            var(--clr-primary-a30),
-            var(--clr-primary-a20),
-            var(--clr-primary-a10),
-            var(--clr-primary-a0));
-    background-size: 200%;
-    animation: animationGradient 2.5s linear infinite;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-}
-
-@keyframes animationGradient {
-    to {
-        background-position: 200%;
-    }
-}
-
-.tag-box .tag {
-    position: absolute;
-    inset: 3px 3px 3px 3px;
-    background-color: var(--clr-dark-a0);
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s ease;
-    cursor: pointer;
-}
-
-.tag-box .tag:hover {
-    color: var(--clr-primary-a0);
-}
-
-.content h1 {
-    font-size: 4rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    margin: 2rem 0;
-    line-height: 1.2;
-    text-shadow: 0 0 10px rgba(128, 128, 128, 00.418);
-}
-
-.content p {
-    margin-bottom: 2rem;
-}
-
-.description {
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
-    max-width: 35rem;
-    color: var(--clr-light-a0);
-}
-
-.btn-group {
-    display: flex;
-    gap: 1rem;
-}
-
-.disc {
-    position: absolute;
-    top: 0;
-    right: -20%;
-    z-index: 1;
-}
+ .nav-links a:hover {
+     color: var(--primary-color);
+ }
