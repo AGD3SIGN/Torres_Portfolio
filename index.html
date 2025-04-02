@@ -14,69 +14,62 @@
 </head>
 
 <body>
-  <!-- Background -->
-  <img class="image-gradient" src="images/gradient.png" alt="gradient">
-  <div class="layer-blur"></div>
-
-  <!-- Header with logo and navigation -->
+  <!-- Header -->
   <header class="header">
-    <a href="#" class="logo">Port<span>folio.</span></a>
-
-    <!-- Desktop Navigation -->
-    <ul class="desktop-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-
-    <!-- Mobile Menu Button -->
-    <button class="menu-btn" id="menuBtn">
-      <i class="ri-menu-line" id="menuIcon"></i>
-    </button>
+    <a href="#" class="logo">
+      <i class="ri-bubble-chart-fill"></i>Brand
+    </a>
+    <div class="menu-btn">
+      <div class="menu-btn__burger"></div>
+    </div>
   </header>
 
-  <!-- Navigation overlay for mobile -->
-  <div class="nav-overlay" id="navOverlay">
-    <ul class="mobile-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+  <!-- Full Screen Navigation Overlay -->
+  <div class="nav-overlay">
+    <nav class="menu">
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <i class="ri-home-4-line"></i>Home
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <i class="ri-information-line"></i>About
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <i class="ri-service-line"></i>Services
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <i class="ri-gallery-line"></i>Portfolio
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <i class="ri-mail-send-line"></i>Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
-  <!-- Main content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-content" id="hero">
-
-      <div class="tag-box">
-        <div class="tag">Hello, I'm Brandon.</div>
-      </div>
-
-      <h1 class="hero-title">Welcome to Our Website</h1>
-      <p class="description">This is a demo of a responsive navigation menu with two different layouts:</p>
-
-      <div class="buttons">
-        <a href="#" class="btn-portfolio">My Work</a>
-        <a href="#" class="btn-contact">Hire Me</a>
-      </div>
-
-      <spline-viewer class="robot" url="https://prod.spline.design/1qfJxXe7oNRgdZKK/scene.splinecode"></spline-viewer>
-
-    </section>
-    <!-- End Hero Section -->
-
-  </main>
-
-
-
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Welcome to Our Website</h1>
+    <p>Scroll down to see the <span class="accent-text">sticky header</span> in action. Click the menu button to see the
+      full-screen navigation with animation.</p>
+    <p>This navigation menu uses our custom color palette and <span class="accent-text">Remixicon</span> for beautiful,
+      modern icons.</p>
+    <a href="#" class="btn">Learn More</a>
+  </div>
 </body>
 
 <!-- JS -->
 <script src="main.js"></script>
 <!-- Spline 3D JS -->
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
 
 </html>

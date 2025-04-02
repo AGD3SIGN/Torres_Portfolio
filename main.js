@@ -1,37 +1,35 @@
-// Select DOM elements
-const menuBtn = document.getElementById('menuBtn');
-const menuIcon = document.getElementById('menuIcon');
-const navOverlay = document.getElementById('navOverlay');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+// Sticky Header
+window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+    header.classList.toggle('sticky', window.scrollY > 0);
+});
 
-// Toggle menu state
+// Menu Toggle
+const menuBtn = document.querySelector('.menu-btn');
+const navOverlay = document.querySelector('.nav-overlay');
 let menuOpen = false;
 
-// Toggle navigation overlay
-function toggleMenu() {
+menuBtn.addEventListener('click', function () {
     if (!menuOpen) {
+        menuBtn.classList.add('open');
         navOverlay.classList.add('active');
-        menuIcon.classList.remove('ri-menu-line');
-        menuIcon.classList.add('ri-close-line');
         document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
         menuOpen = true;
     } else {
+        menuBtn.classList.remove('open');
         navOverlay.classList.remove('active');
-        menuIcon.classList.remove('ri-close-line');
-        menuIcon.classList.add('ri-menu-line');
-        document.body.style.overflow = ''; // Allow scrolling when menu is closed
+        document.body.style.overflow = ''; // Re-enable scrolling
         menuOpen = false;
     }
-}
+});
 
-// Event listeners
-menuBtn.addEventListener('click', toggleMenu);
-
-// Close menu when a link is clicked
-mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (menuOpen) {
-            toggleMenu();
-        }
+// Close menu when clicking a link
+const menuLinks = document.querySelectorAll('.menu-link');
+menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        menuBtn.classList.remove('open');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        menuOpen = false;
     });
 });
