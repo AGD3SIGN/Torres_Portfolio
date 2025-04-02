@@ -16,31 +16,23 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: var(--text);
+    background-color: var(--background);
     overflow-x: hidden;
 }
 
 a {
     transition: all 0.3s ease;
-    color: var(--text-color);
+    color: var(--text);
 }
 
 /* ========== Root Variable ========== */
 :root {
-    --background-color: #0c0c0a;
-    --text-color: #d2d1d0;
-    --primary-color: #1b8ab0;
-    --secondary-color: #cf513e;
-}
-
-/* Reusable CSS */
-.container {
-    max-width: 1400px;
-}
-
-span {
-    color: var(--primary-color);
+    --text: #f0f0ec;
+    --background: #181818;
+    --primary: #5b8291;
+    --secondary: #2e424d;
+    --accent: #98dad9;
 }
 
 /* ===== Gradient & layer Blur Effect=====  */
@@ -63,6 +55,17 @@ span {
     z-index: -1;
 }
 
+/* Reusable CSS */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 20px 40px;
+}
+
+span {
+    color: var(--accent);
+}
+
 /* Navigation styles */
 .header {
     position: fixed;
@@ -75,13 +78,12 @@ span {
     align-items: center;
     z-index: 100;
     background-color: var(--background-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(210, 209, 208, 0.15);
 }
 
 .logo {
     font-size: 24px;
     font-weight: 700;
-    color: #2563eb;
     text-decoration: none;
 }
 
@@ -96,7 +98,7 @@ span {
 }
 
 .desktop-nav a {
-    color: #333;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -105,7 +107,7 @@ span {
 }
 
 .desktop-nav a:hover {
-    color: #2563eb;
+    color: var(--primary-color);
 }
 
 .desktop-nav a::after {
@@ -115,7 +117,7 @@ span {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #2563eb;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
@@ -129,7 +131,7 @@ span {
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #333;
+    color: var(--text-color);
     display: none;
     align-items: center;
     z-index: 150;
@@ -137,7 +139,7 @@ span {
 }
 
 .menu-btn:hover {
-    color: #2563eb;
+    color: var(--primary-color);
 }
 
 /* Navigation overlay for mobile */
@@ -147,7 +149,7 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #2563eb;
+    background-color: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +194,7 @@ span {
 
 .mobile-nav a {
     font-size: 32px;
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 700;
     position: relative;
@@ -212,10 +214,27 @@ span {
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: white;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
 .mobile-nav a:hover::after {
     width: 100%;
 }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .mobile-nav a {
+        font-size: 24px;
+    }
+}
+
