@@ -1,35 +1,32 @@
-// Sticky Header
+// JavaScript for Sticky Navigation
 window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-    header.classList.toggle('sticky', window.scrollY > 0);
-});
-
-// Menu Toggle
-const menuBtn = document.querySelector('.menu-btn');
-const navOverlay = document.querySelector('.nav-overlay');
-let menuOpen = false;
-
-menuBtn.addEventListener('click', function () {
-    if (!menuOpen) {
-        menuBtn.classList.add('open');
-        navOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-        menuOpen = true;
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('sticky');
     } else {
-        menuBtn.classList.remove('open');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Re-enable scrolling
-        menuOpen = false;
+        navbar.classList.remove('sticky');
     }
 });
 
-// Close menu when clicking a link
-const menuLinks = document.querySelectorAll('.menu-link');
-menuLinks.forEach(link => {
-    link.addEventListener('click', function () {
-        menuBtn.classList.remove('open');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        menuOpen = false;
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const menuClose = document.querySelector('.menu-close');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', function () {
+    navLinks.classList.add('active');
+});
+
+menuClose.addEventListener('click', function () {
+    navLinks.classList.remove('active');
+});
+
+// Close mobile menu when clicking a link
+const navItems = document.querySelectorAll('.nav-links a');
+navItems.forEach(item => {
+    item.addEventListener('click', function () {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
     });
 });

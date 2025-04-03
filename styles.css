@@ -5,6 +5,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Remove default margin and padding */
@@ -26,11 +27,11 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-    min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     background-color: var(--background);
     color: var(--text);
+    min-height: 100vh;
 }
 
 /* A elements that don't have a class get default styles */
@@ -85,10 +86,91 @@ h6 {
 
 /* ========== Root Variable ========== */
 :root {
-    --text: #f0f0ec;
-    --background: #181818;
-    --primary: #5b8291;
-    --secondary: #2e424d;
-    --accent: #98dad9;
+    --text: #fffafa;
+    --background: #0f0f0f;
+    --primary: #15A79C;
+    --shadow: #525254;
 }
 
+/*===== Gradient & Layer Blur =====*/
+.image-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.layer-blur {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px var(--shadow);
+    rotate: -30deg;
+    z-index: -1;
+}
+
+/*===== Navigation Bar =====*/
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    z-index: 999;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+span {
+    color: var(--primary);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: -5%;
+}
+
+nav a {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.btn-cta {
+    background-color: var(--text);
+    color: var(--background);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-cta:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+}
