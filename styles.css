@@ -29,6 +29,8 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 /* A elements that don't have a class get default styles */
@@ -83,8 +85,8 @@ h6 {
 
 /* ========== Root Variable ========== */
 :root {
-    --background: #f0f0ec;
-    --text: #181818;
+    --text: #f0f0ec;
+    --background: #181818;
     --primary: #5b8291;
     --secondary: #2e424d;
     --accent: #98dad9;
