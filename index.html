@@ -10,57 +10,36 @@
   <!-- Styling Css -->
   <link rel="stylesheet" href="styles.css">
   <!-- Remixicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Image gradient and blur -->
-  <img class="image-gradient" src="images/gradient.png" alt="">
-  <div class="layer-blur"></div>
 
-  <!-- Header container -->
-  <div class="container">
-    <header class="transparent">
-      <nav class="navbar">
+  <header class="header container">
+    <img src="images/logo2.svg" alt="">
 
-        <a href="#" class="logo">Port<span>folio.</span></a>
-
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-
-        <button class="cta-button desktop-cta">Get Started</button>
-
-        <div class="hamburger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-      </nav>
-    </header>
-  </div>
-
-
-  <section class="hero container">
-    <div class="hero-content">
-      <h1>Welcome to Our Website</h1>
-      <p>Experience our responsive navigation with a transparent header that changes on scroll.</p>
+    <!-- Nav Menu Open/Close Btn-->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="ri-menu-3-line" id="menu-open"></i>
+      <i class="ri-close-line" id="menu-close"></i>
     </div>
 
-    <spline-viewer url="https://prod.spline.design/1qfJxXe7oNRgdZKK/scene.splinecode"></spline-viewer>
-  </section>
+    <nav class="main-nav" id="main-nav">
+      <ul class="nav-list">
+        <li class="nav-link">
+          <a href="#" class="nav-item">Home</a>
+          <a href="#" class="nav-item">About</a>
+          <a href="#" class="nav-item">Portfolio</a>
+          <a href="#" class="nav-item">Contact</a>
+        </li>
+      </ul>
+    </nav>
 
-  <section class="hero container">
-    <div class="hero-content">
-      <h1>Welcome to Our Website</h1>
-      <p>Experience our responsive navigation with a transparent header that changes on scroll.</p>
-    </div>
 
-    <spline-viewer url="https://prod.spline.design/1qfJxXe7oNRgdZKK/scene.splinecode"></spline-viewer>
-  </section>
+    <button class="cta-btn">Let's Talk</button>
+  </header>
+
+
 
 </body>
 
