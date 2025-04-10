@@ -7,38 +7,298 @@
   <meta name="description" content="Portfolio of Brandon Torres - Web Developer & Designer">
   <meta name="author" content="Brandon Torres">
   <title>Brandon Torres | Portfolio</title>
-  <!-- Styling Css -->
   <link rel="stylesheet" href="styles.css">
-  <!-- Remixicons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 </head>
 
 <body>
-
-  <header class="header container">
-    <img src="images/logo2.svg" alt="">
-
-    <!-- Nav Menu Open/Close Btn-->
-    <div class="menu-toggle" id="menu-toggle">
-      <i class="ri-menu-3-line" id="menu-open"></i>
-      <i class="ri-close-line" id="menu-close"></i>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <!-- Navigation Header -->
+      <nav>
+        <!-- Logo -->
+        <div class="logo"><img src="images/logo.svg" alt=""></div>
+        <!-- Menu Toggle -->
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <nav class="main-nav" id="main-nav">
-      <ul class="nav-list">
-        <li class="nav-link">
-          <a href="#" class="nav-item">Home</a>
-          <a href="#" class="nav-item">About</a>
-          <a href="#" class="nav-item">Portfolio</a>
-          <a href="#" class="nav-item">Contact</a>
-        </li>
-      </ul>
-    </nav>
-
-
-    <button class="cta-btn">Let's Talk</button>
   </header>
 
+  <!-- Main Section -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="fade-in">John Doe</h1>
+          <h2 class="fade-in">Freelance Web Developer</h2>
+          <p class="fade-in">Creating beautiful, functional websites that drive results</p>
+          <div class="hero-cta fade-in">
+            <a href="#work" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-image slide-in-left">
+            <img src="/placeholder.svg?height=400&width=400" alt="John Doe">
+          </div>
+          <div class="about-text slide-in-right">
+            <h3>Hello, I'm John</h3>
+            <p>I'm a passionate web developer with over 5 years of experience creating modern, responsive websites and
+              web applications. I specialize in front-end development with expertise in HTML, CSS, JavaScript, and
+              various modern frameworks.</p>
+            <p>My approach combines clean code, intuitive user experiences, and visually appealing designs to create
+              websites that not only look great but also perform exceptionally well.</p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">My Services</h2>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+            </div>
+            <h3>Web Design</h3>
+            <p>Creating beautiful, intuitive designs that enhance user experience and align with your brand identity.
+            </p>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>Building responsive, high-performance websites with clean code and modern technologies.</p>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3>Responsive Design</h3>
+            <p>Ensuring your website looks and functions perfectly on all devices, from desktops to smartphones.</p>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                <line x1="16" y1="8" x2="2" y2="22"></line>
+                <line x1="17.5" y1="15" x2="9" y2="15"></line>
+              </svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Crafting user interfaces that are not only visually appealing but also provide exceptional user
+              experiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work">
+      <div class="container">
+        <h2 class="section-title">My Work</h2>
+        <div class="work-grid">
+          <div class="work-item fade-in" data-id="1">
+            <div class="work-image">
+              <img src="/placeholder.svg?height=600&width=800" alt="E-commerce Website">
+              <div class="work-overlay">
+                <div class="work-description">
+                  <h3>E-commerce Website</h3>
+                  <p>Web Development</p>
+                  <button class="btn btn-small view-project">View Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="work-item fade-in" data-id="2">
+            <div class="work-image">
+              <img src="/placeholder.svg?height=600&width=800" alt="Portfolio Website">
+              <div class="work-overlay">
+                <div class="work-description">
+                  <h3>Portfolio Website</h3>
+                  <p>Web Design</p>
+                  <button class="btn btn-small view-project">View Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="work-item fade-in" data-id="3">
+            <div class="work-image">
+              <img src="/placeholder.svg?height=600&width=800" alt="Mobile App">
+              <div class="work-overlay">
+                <div class="work-description">
+                  <h3>Mobile App</h3>
+                  <p>UI/UX Design</p>
+                  <button class="btn btn-small view-project">View Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="work-item fade-in" data-id="4">
+            <div class="work-image">
+              <img src="/placeholder.svg?height=600&width=800" alt="Corporate Website">
+              <div class="work-overlay">
+                <div class="work-description">
+                  <h3>Corporate Website</h3>
+                  <p>Web Development</p>
+                  <button class="btn btn-small view-project">View Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info slide-in-left">
+            <h3>Contact Information</h3>
+            <p>Feel free to reach out to me for any inquiries or project discussions. I'm always open to new
+              opportunities and collaborations.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>john.doe@example.com</span>
+              </div>
+              <div class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>San Francisco, CA</span>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                  </path>
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <form class="contact-form slide-in-right">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
 
 </body>
