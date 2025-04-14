@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("project-modal")
     const closeModal = document.querySelector(".close-modal")
     const modalBody = document.querySelector(".modal-body")
-    const projectButtons = document.querySelectorAll(".view-project")
 
     // Project data (in a real project, this might come from a database or API)
     const projectData = [
@@ -128,48 +127,51 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
 
     // Open modal with project details
-    projectButtons.forEach((button) => {
-        button.addEventListener("click", function () {
+    document.querySelectorAll(".view-project").forEach((button) => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault()
+            e.stopPropagation()
+
             const projectItem = this.closest(".work-item")
-            const projectId = Number.parseInt(projectItem.dataset.id)
+            const projectId = Number.parseInt(projectItem.getAttribute("data-id"))
             const project = projectData.find((p) => p.id === projectId)
 
             if (project) {
                 // Create modal content
                 modalBody.innerHTML = `
-                      <div class="project-details">
-                          <div class="project-header">
-                              <h2>${project.title}</h2>
-                              <p>${project.category}</p>
-                          </div>
-                          <div class="project-image">
-                              <img src="${project.image}" alt="${project.title}">
-                          </div>
-                          <div class="project-info">
-                              <div class="project-info-item">
-                                  <h4>Client</h4>
-                                  <p>${project.client}</p>
-                              </div>
-                              <div class="project-info-item">
-                                  <h4>Date</h4>
-                                  <p>${project.date}</p>
-                              </div>
-                              <div class="project-info-item">
-                                  <h4>Technologies</h4>
-                                  <p>${project.technologies}</p>
-                              </div>
-                          </div>
-                          <div class="project-description">
-                              <h3>Project Overview</h3>
-                              <p>${project.description}</p>
-                              <h3>Challenge</h3>
-                              <p>${project.challenge}</p>
-                              <h3>Solution</h3>
-                              <p>${project.solution}</p>
-                          </div>
-                          <a href="#" class="btn btn-primary">Visit Project</a>
-                      </div>
-                  `
+            <div class="project-details">
+                <div class="project-header">
+                    <h2>${project.title}</h2>
+                    <p>${project.category}</p>
+                </div>
+                <div class="project-image">
+                    <img src="${project.image}" alt="${project.title}">
+                </div>
+                <div class="project-info">
+                    <div class="project-info-item">
+                        <h4>Client</h4>
+                        <p>${project.client}</p>
+                    </div>
+                    <div class="project-info-item">
+                        <h4>Date</h4>
+                        <p>${project.date}</p>
+                    </div>
+                    <div class="project-info-item">
+                        <h4>Technologies</h4>
+                        <p>${project.technologies}</p>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <h3>Project Overview</h3>
+                    <p>${project.description}</p>
+                    <h3>Challenge</h3>
+                    <p>${project.challenge}</p>
+                    <h3>Solution</h3>
+                    <p>${project.solution}</p>
+                </div>
+                <a href="#" class="btn btn-primary">Visit Project</a>
+            </div>
+          `
 
                 // Show modal
                 modal.style.display = "block"
@@ -216,11 +218,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isValid) {
             // Show success message
             contactForm.innerHTML = `
-                  <div class="success-message">
-                      <h3>Message Sent!</h3>
-                      <p>Thank you for contacting me. I'll get back to you as soon as possible.</p>
-                  </div>
-              `
+          <div class="success-message">
+              <h3>Message Sent!</h3>
+              <p>Thank you for contacting me. I'll get back to you as soon as possible.</p>
+          </div>
+        `
         }
     })
 })
