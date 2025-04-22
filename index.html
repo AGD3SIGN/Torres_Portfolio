@@ -4,505 +4,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional web developer portfolio showcasing skills, projects, and services">
-  <meta name="keywords" content="web developer, portfolio, frontend, backend, web design, freelance">
-
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Brandon Torres | Web Developer">
-  <meta property="og:description" content="Freelance web developer specializing in modern web applications">
-  <meta property="og:image" content="images/og-image.jpg">
-  <meta property="og:url" content="https://brandonjosephtorres.com">
-
+  <meta name="description" content="Web Developer Portfolio - Showcasing skills and projects in web development">
+  <meta name="keywords" content="web developer, portfolio, frontend, backend, projects">
   <!-- Title -->
   <title>Brandon Torres Freelance Web Developer Portfolio</title>
-
   <!-- Favicon | Place .ico location in href location -->
   <link rel="icon" href="#">
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <!-- Remixicon Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/animations.css">
 </head>
 
 <body>
-
-  <!-- Custom Cursor -->
+  <!--------------- Custom Cursor --------------->
   <div class="cursor-dot"></div>
   <div class="cursor-outline"></div>
 
-  <!-- Header -->
-  <header class="header">
-    <!-- Header Container -->
-    <div class="container">
-      <!-- Logo -->
-      <div class="logo"><a href="#" aria-label="Home">B<span>J</span>T</a></div>
-      <!-- Navigation Menu Container -->
-      <nav class="nav">
-        <!-- Nav Toggle Button -->
-        <button class="nav-toggle" aria-label="Toggle Navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <!-- Nav Menu -->
-        <ul class="nav-menu">
-          <!-- Nav Links -->
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#" class="nav-link">Testimonials</a></li>
-          <li><a href="#" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+  <!--------------- Navigation Toggle --------------->
+  <button class="nav-toggle" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!--------------- Navigation Menu --------------->
+  <nav class="main-nav">
+    <div class="nav-content">
+      <!-- Nav Menu -->
+      <ul>
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Theme Toggle -->
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-switch">
+        <label for="theme-switch" class="theme-switch-label">
+          <i class="ri-sun-line"></i>
+          <i class="ri-moon-line"></i>
+        </label>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- Main Section -->
-  <main>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="container">
-        <!-- Hero Content -->
-        <div class="hero-content">
-          <!-- Hero Title -->
-          <h1 class="hero-title">
-            <span class="accent">Brandon Torres</span>
-            <span class="hero-subtitle">Freelance Web Developer</span>
-          </h1>
-          <!-- Hero Description -->
-          <p class="hero-text">Crafting digital experiences that blend creativity with technical excellence</p>
-          <!-- Hero CTA -->
-          <div class="hero-cta">
-            <a href="#contact" class="btn btn-primary">Lets Talk!</a>
-            <a href="#projects" class="btn btn-secondary">View My Portfolio</a>
-          </div>
+  <!--------------- Hero Section --------------->
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Hi, I'm <span class="highlight">Brandon.</span></h1>
+        <h2>Web Developer & UI Designer</h2>
+        <p>I build exceptional digital experiences with clean, efficient code.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn primary-btn">View My Work</a>
+          <a href="#contact" class="btn secondary-btn">Get In Touch</a>
         </div>
-        <!-- Hero Visual -->
-        <div class="hero-visual">
-          <div class="code-animation">
-            <pre><code>&lt;<span class="accent">div</span> class="<span class="accent">experience</span>"&gt;
-&lt;<span class="accent">code</span>&gt;
-<span class="typing-text">function createAwesome() {
-return passion + skills;
-}</span>
-&lt;/<span class="accent">code</span>&gt;
-&lt;/<span class="accent">div</span>&gt;</code></pre>
+      </div>
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-button close"></span>
+            <span class="terminal-button minimize"></span>
+            <span class="terminal-button maximize"></span>
+          </div>
+          <div class="terminal-title">terminal</div>
+        </div>
+        <div class="terminal-body">
+          <div class="line">
+            <span class="prompt">$</span>
+            <span class="command" id="typing-text"></span>
+            <span class="cursor"></span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div class="arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
 
-    <!-- Bento Grid Layout -->
-    <section class="bento-grid">
-      <div class="container">
-        <!-- About Section Start -->
-        <div class="bento-item about-section" id="about">
-          <h2 class="section-title">About Me</h2>
-          <div class="about-content">
-            <div class="about-image">
-              <img src="images/forest.jpg" alt="John Doe" width="300" height="300">
-            </div>
-            <div class="about-text">
-              <p>I'm a passionate web developer with over 5 years of experience creating beautiful, functional websites
-                and applications. I specialize in crafting user-centric digital experiences that help businesses achieve
-                their goals.</p>
-              <p>My approach combines clean code, modern design principles, and performance optimization to deliver
-                exceptional results for every project.</p>
-              <div class="about-stats">
-                <div class="stat">
-                  <span class="stat-number accent">5+</span>
-                  <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-number accent">50+</span>
-                  <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-number accent">30+</span>
-                  <span class="stat-label">Happy Clients</span>
-                </div>
-              </div>
-            </div>
+  <!--------------- About Section --------------->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <div class="image-container">
+            <img src="images/landscape.jpg" alt="Professional headshot" class="profile-image">
+            <div class="image-border"></div>
           </div>
         </div>
-
-        <!-- Services Section Start -->
-        <div class="bento-item services-section" id="services">
-          <h2 class="section-title">Services</h2>
-          <div class="services-grid">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-code"></i>
-              </div>
-              <h3 class="service-title">Web Development</h3>
-              <p class="service-description">Custom websites built with clean, efficient code and modern best practices.
-              </p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-mobile-alt"></i>
-              </div>
-              <h3 class="service-title">Responsive Design</h3>
-              <p class="service-description">Websites that look and function beautifully across all devices and screen
-                sizes.</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-              <h3 class="service-title">E-Commerce</h3>
-              <p class="service-description">Online stores with secure payment processing and intuitive user experience.
-              </p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-search"></i>
-              </div>
-              <h3 class="service-title">SEO Optimization</h3>
-              <p class="service-description">Improve your site's visibility and ranking in search engine results.</p>
-            </div>
+        <div class="about-text">
+          <p>I'm a passionate web developer with a keen eye for design and a love for creating seamless user
+            experiences. With a background in both frontend and backend technologies, I bring a holistic approach to
+            every project.</p>
+          <p>My journey in web development began 5 years ago, and since then, I've been constantly learning and adapting
+            to new technologies and methodologies. I believe in writing clean, maintainable code that not only works
+            well but is also accessible to all users.</p>
+          <p>When I'm not coding, you can find me exploring new design trends, contributing to open-source projects, or
+            hiking in the great outdoors.</p>
+          <div class="about-cta">
+            <a href="#" class="btn secondary-btn">Download Resume <i class="fas fa-download"></i></a>
           </div>
         </div>
-        <!-- Skills Section -->
-        <div class="bento-item skills-section" id="skills">
-          <h2 class="section-title">Skills</h2>
-          <div class="skills-container">
-            <div class="skills-category">
-              <h3 class="category-title">Frontend</h3>
-              <div class="skill-bars">
-                <div class="skill">
-                  <div class="skill-name">HTML5</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">CSS3</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">JavaScript</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">React</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 80%"></div>
-                  </div>
-                </div>
-              </div>
+      </div>
+    </div>
+  </section>
+
+  <!--------------- Skills Section --------------->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category" data-aos="fade-up">
+          <h3>Frontend</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-html5-line"></i></div>
+              <span>HTML5</span>
             </div>
-            <div class="skills-category">
-              <h3 class="category-title">Backend</h3>
-              <div class="skill-bars">
-                <div class="skill">
-                  <div class="skill-name">Node.js</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 75%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">Express</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 70%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">MongoDB</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 65%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">SQL</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 60%"></div>
-                  </div>
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-css3-line"></i></div>
+              <span>CSS3</span>
             </div>
-            <div class="skills-category">
-              <h3 class="category-title">Tools & Others</h3>
-              <div class="skill-bars">
-                <div class="skill">
-                  <div class="skill-name">Git</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">Figma</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 70%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">Webpack</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 65%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">Docker</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 60%"></div>
-                  </div>
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-javascript-line"></i></div>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-reactjs-line"></i></div>
+              <span>React</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-vuejs-line"></i></div>
+              <span>Vue.js</span>
             </div>
           </div>
         </div>
 
-        <!-- Project Section -->
-        <div class="bento-item projects-section" id="projects">
-          <h2 class="section-title">Projects</h2>
-          <div class="projects-grid">
-            <div class="project-card" data-project="project1">
-              <div class="project-image">
-                <img src="images/project1.jpg" alt="E-commerce Website" loading="lazy" width="400" height="300">
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">E-commerce Platform</h3>
-                <p class="project-description">A full-featured online store with payment processing and inventory
-                  management.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">Node.js</span>
-                </div>
-              </div>
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <h3>Backend</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-nodejs-line"></i></div>
+              <span>Node.js</span>
             </div>
-            <div class="project-card" data-project="project2">
-              <div class="project-image">
-                <img src="images/project2.jpg" alt="Portfolio Website" loading="lazy" width="400" height="300">
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">Photography Portfolio</h3>
-                <p class="project-description">A visually stunning portfolio for a professional photographer with
-                  gallery features.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-php-line"></i></div>
+              <span>PHP</span>
             </div>
-            <div class="project-card" data-project="project3">
-              <div class="project-image">
-                <img src="images/project3.jpg" alt="Dashboard UI" loading="lazy" width="400" height="300">
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">Analytics Dashboard</h3>
-                <p class="project-description">Interactive dashboard with real-time data visualization and reporting
-                  tools.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">Chart.js</span>
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-server-line"></i></div>
+              <span>Express</span>
             </div>
-            <div class="project-card" data-project="project4">
-              <div class="project-image">
-                <img src="images/project4.jpg" alt="Mobile App" loading="lazy" width="400" height="300">
-              </div>
-              <div class="project-info">
-                <h3 class="project-title">Fitness Tracker App</h3>
-                <p class="project-description">Mobile-first web application for tracking workouts and nutrition goals.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">React</span>
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-firebase-line"></i></div>
+              <span>Firebase</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-file-settings-line"></i></div>
+              <span>REST API</span>
             </div>
           </div>
         </div>
-        <!-- Testimonials Section -->
-        <div class="bento-item testimonials-section" id="testimonials">
-          <h2 class="section-title">Testimonials</h2>
-          <div class="testimonials-container">
-            <div class="testimonial-card">
-              <div class="testimonial-content">
-                <p>"John delivered our e-commerce site ahead of schedule and exceeded all our expectations. His
-                  attention to detail and problem-solving skills are exceptional."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-image">
-                  <img src="images/client1.jpg" alt="Sarah Johnson" width="60" height="60">
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name">Sarah Johnson</h4>
-                  <p class="author-title">CEO, Fashion Boutique</p>
-                </div>
-              </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <h3>Tools & Others</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-git-commit-line"></i></div>
+              <span>Git</span>
             </div>
-            <div class="testimonial-card">
-              <div class="testimonial-content">
-                <p>"Working with John was a pleasure. He understood our vision immediately and transformed it into a
-                  beautiful, functional website that has significantly increased our conversions."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-image">
-                  <img src="images/client2.jpg" alt="Michael Chen" width="60" height="60">
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name">Michael Chen</h4>
-                  <p class="author-title">Marketing Director, Tech Startup</p>
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-github-line"></i></div>
+              <span>GitHub</span>
             </div>
-            <div class="testimonial-card">
-              <div class="testimonial-content">
-                <p>"John's technical expertise and creative approach helped us build a website that stands out in our
-                  industry. He's responsive, professional, and delivers quality work."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-image">
-                  <img src="images/client3.jpg" alt="Emily Rodriguez" width="60" height="60">
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name">Emily Rodriguez</h4>
-                  <p class="author-title">Owner, Design Studio</p>
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-figma-line"></i></div>
+              <span>Figma</span>
             </div>
-          </div>
-        </div>
-        <!-- Contact Section -->
-        <div class="bento-item contact-section" id="contact">
-          <h2 class="section-title">Get in Touch</h2>
-          <div class="contact-container">
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:hello@johndoe.com">hello@johndoe.com</a>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>San Francisco, CA</span>
-              </div>
-              <div class="contact-social">
-                <a href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener noreferrer"
-                  aria-label="LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://twitter.com/johndoe" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://dribbble.com/johndoe" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
-                  <i class="fab fa-dribbble"></i>
-                </a>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-smartphone-line"></i></div>
+              <span>Responsive</span>
             </div>
-            <div class="contact-form">
-              <form id="contactForm">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-              </form>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-accessibility-line"></i></div>
+              <span>Accessibility</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="ri-speed-up-line"></i></div>
+              <span>Performance</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="bento-grid">
+        <div class="project-card large" data-color="#DFFF00">
+          <div class="project-content">
+            <h3>E-Commerce Platform</h3>
+            <p>A full-featured online store with product management, cart functionality, and payment processing.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>Stripe</span>
+            </div>
+            <button class="view-project-btn">View Project</button>
+          </div>
+          <div class="project-image">
+            <img src="/placeholder.svg?height=300&width=500" alt="E-Commerce Platform Screenshot">
+          </div>
+        </div>
+
+        <div class="project-card medium" data-color="#FF6B6B">
+          <div class="project-content">
+            <h3>Weather Dashboard</h3>
+            <p>Real-time weather application with location detection and 5-day forecast.</p>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>Weather API</span>
+              <span>CSS3</span>
+            </div>
+            <button class="view-project-btn">View Project</button>
+          </div>
+          <div class="project-image">
+            <img src="/placeholder.svg?height=250&width=400" alt="Weather Dashboard Screenshot">
+          </div>
+        </div>
+
+        <div class="project-card small" data-color="#4ECDC4">
+          <div class="project-content">
+            <h3>Task Manager</h3>
+            <p>Productivity app with drag-and-drop interface.</p>
+            <div class="project-tech">
+              <span>Vue.js</span>
+              <span>Firebase</span>
+            </div>
+            <button class="view-project-btn">View Project</button>
+          </div>
+          <div class="project-image">
+            <img src="/placeholder.svg?height=200&width=300" alt="Task Manager Screenshot">
+          </div>
+        </div>
+
+        <div class="project-card medium" data-color="#F9DC5C">
+          <div class="project-content">
+            <h3>Portfolio Generator</h3>
+            <p>Web app that helps users create professional portfolios without coding.</p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+            <button class="view-project-btn">View Project</button>
+          </div>
+          <div class="project-image">
+            <img src="/placeholder.svg?height=250&width=400" alt="Portfolio Generator Screenshot">
+          </div>
+        </div>
+
+        <div class="project-card small" data-color="#7B68EE">
+          <div class="project-content">
+            <h3>Fitness Tracker</h3>
+            <p>Mobile-first app for tracking workouts and progress.</p>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>Chart.js</span>
+              <span>LocalStorage</span>
+            </div>
+            <button class="view-project-btn">View Project</button>
+          </div>
+          <div class="project-image">
+            <img src="/placeholder.svg?height=200&width=300" alt="Fitness Tracker Screenshot">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Project Modal -->
-  <div class="modal" id="projectModal">
+  <div class="project-modal">
     <div class="modal-content">
-      <button class="modal-close" aria-label="Close modal">&times;</button>
-      <div class="modal-body">
-        <!-- Content will be dynamically inserted here -->
+      <button class="close-modal">&times;</button>
+      <div class="modal-header">
+        <h3 id="modal-title">Project Title</h3>
       </div>
-      <div class="modal-navigation">
-        <button class="modal-prev" aria-label="Previous project">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <button class="modal-next" aria-label="Next project">
-          <i class="fas fa-arrow-right"></i>
-        </button>
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img id="modal-image" src="/placeholder.svg?height=500&width=800" alt="Project Screenshot">
+          <div class="gallery-nav">
+            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="modal-details">
+          <div class="modal-section">
+            <h4>Overview</h4>
+            <p id="modal-overview">Project overview text goes here.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Challenge & Solution</h4>
+            <p id="modal-challenge">Challenge and solution text goes here.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Key Features</h4>
+            <ul id="modal-features">
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>Technologies Used</h4>
+            <div id="modal-tech" class="modal-tech-list">
+              <span>Tech 1</span>
+              <span>Tech 2</span>
+              <span>Tech 3</span>
+            </div>
+          </div>
+          <div class="modal-links">
+            <a href="#" id="modal-demo" class="btn primary-btn" target="_blank">Live Demo</a>
+            <a href="#" id="modal-github" class="btn secondary-btn" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:hello@example.com">hello@example.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+1234567890">+1 (234) 567-890</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>San Francisco, CA</span>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub profile" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn profile" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter profile" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="CodePen profile" class="social-link"><i class="fab fa-codepen"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Name</label>
+            <span class="error-message" id="name-error"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+            <span class="error-message" id="email-error"></span>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" required>
+            <label for="subject">Subject</label>
+            <span class="error-message" id="subject-error"></span>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" required></textarea>
+            <label for="message">Message</label>
+            <span class="error-message" id="message-error"></span>
+          </div>
+          <button type="submit" class="btn primary-btn submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-logo">
-          <a href="#" aria-label="Home">JD</a>
-        </div>
+        <p>&copy; <span id="current-year"></span> Alex Developer. All rights reserved.</p>
         <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-social">
-          <a href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://twitter.com/johndoe" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 John Doe. All rights reserved.</p>
-      </div>
+      <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+      </button>
     </div>
   </footer>
+
 </body>
 
 <!-- JS -->
-<script src="js/main.js" type="module"></script>
-<script src="js/modal.js" type="module"></script>
-<script src="js/animations.js" type="module"></script>
-<script src="js/cursor.js" type="module"></script>
+<script src="js/main.js"></script>
 
 </html>
