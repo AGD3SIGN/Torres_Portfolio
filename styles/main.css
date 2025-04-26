@@ -7,15 +7,14 @@ Root Variables
     --dark: #000000;
     --dark-alt: #252525;
     --light: #ffffff;
-    --light-alt: #f0f0f0;
-    --text-dark: #252525;
-    --text-light: #ffffff;
-    --text-light-alt: #e0e0e0;
-    --error: #ff6b6b;
-    --success: #2ecea2;
+    --light-alt: #cccccc;
     --transition: all 0.3s ease;
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
+
+    --warning: #ff5f56;
+    --caution: #ffbd2e;
+    --safe: #27c93f;
 }
 
 /*===================== 
@@ -35,18 +34,31 @@ html {
 }
 
 body {
-    font-family: var(--font-primary);
-    background-color: var(--white);
-    color: var(--text-dark);
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
     line-height: 1.6;
     overflow-x: hidden;
-    transition: background-color var(--transition-normal), color var(--transition-normal);
+    cursor: none;
+    /* Hide default cursor */
 }
 
 a {
+    color: var(--light);
     text-decoration: none;
-    color: inherit;
-    transition: color var(--transition-fast);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+button {
+    cursor: none;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
 }
 
 ul {
@@ -59,6 +71,366 @@ img {
     display: block;
 }
 
+
 /*===================== 
 Reusable CSS
 =====================*/
+section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-divider {
+    height: 4px;
+    width: 60px;
+    background-color: var(--primary);
+    margin: 0 auto;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+/*===================== 
+Custom Cursor CSS
+=====================*/
+.cursor-dot,
+.cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary);
+    transition: all 0.2s ease-out;
+}
+
+/*===================== 
+Progress Bar CSS
+=====================*/
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--primary);
+    z-index: 1000;
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/*===================== 
+Navigation CSS
+=====================*/
+.nav-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    z-index: 1001;
+    background-color: rgba(37, 37, 37, 0.8);
+    border-radius: 25%;
+    transition: var(--transition);
+}
+
+.nav-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--light);
+    transition: var(--transition);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--dark);
+    z-index: 1000;
+    transition: right 0.5s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav.active {
+    right: 0;
+}
+
+.nav-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 5rem 2rem;
+}
+
+.nav-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-footer {
+    margin-top: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/*===================== 
+Hero Section CSS
+=====================*/
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--light-alt);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*===================== 
+CTA Button CSS
+=====================*/
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary);
+    color: var(dark);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    align-self: flex-start;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary);
+    color: var(--light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(46, 206, 162, 0.3);
+}
+
+/*===================== 
+Terminal CSS
+=====================*/
+.terminal {
+    background-color: var(--dark-alt);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin-left: auto;
+}
+
+.terminal-header {
+    background-color: #1a1a1a;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close {
+    background-color: var(--warning);
+}
+
+.minimize {
+    background-color: var(--caution);
+}
+
+.maximize {
+    background-color: var(--safe);
+}
+
+.terminal-title {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    color: var(--light-alt);
+}
+
+.terminal-body {
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+}
+
+.line {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.prompt {
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+.command {
+    color: var(--primary);
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2rem;
+    background-color: var(--primary);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
