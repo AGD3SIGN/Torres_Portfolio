@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <!-- Meta Names-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description"
+    content="Professional web designer specializing in responsive, user-friendly websites for businesses and individuals">
+  <!-- Meta Properties -->
+  <meta property="og:title" content="Brandon Torres | Freelance Web Designer & Developer">
+  <meta property="og:description"
+    content="Professional web designer specializing in responsive, user-friendly websites for businesses and individuals">
+  <meta property="og:image" content="./images/og-image.jpg">
+  <meta property="og:url" content="https://www.brandonjosephtorres.com">
+  <meta property="og:type" content="website">
+  <!-- Title -->
+  <title>Brandon Torres | Freelance Web Designer & Developer</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Remixicon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+  <!-- Preload critical assets -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="js/main.js" as="script">
 </head>
+
 <body>
-  
+  <!-- Progress bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" aria-label="Brandon Torres Portfolio - Home">BT<span>.</span></a>
+      </div>
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-controls">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+          <i class="ri-moon-line"></i>
+          <i class="ri-sun-line"></i>
+        </button>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>

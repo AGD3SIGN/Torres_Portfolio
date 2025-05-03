@@ -1,201 +1,169 @@
-// Main JavaScript File
-
+// Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-    // Progress Bar
-    window.addEventListener("scroll", updateProgressBar)
+    // Initialize theme
+    initTheme()
 
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector(".menu-toggle")
-    const navMenu = document.querySelector(".nav-menu")
+    // Initialize mobile menu
+    initMobileMenu()
 
-    if (menuToggle) {
-        menuToggle.addEventListener("click", function () {
-            const expanded = this.getAttribute("aria-expanded") === "true" || false
-            this.setAttribute("aria-expanded", !expanded)
-            navMenu.classList.toggle("active")
+    // Initialize progress bar
+    initProgressBar()
 
-            // Prevent scrolling when menu is open
-            document.body.classList.toggle("menu-open")
-        })
+    // Set current year in footer
+    document.getElementById("currentYear").textContent = new Date().getFullYear()
+
+    // Initialize modals if they exist
+    initModals()
+})
+
+/**
+ * Initialize theme based on user preference or localStorage
+ */
+function initTheme() {
+    const themeToggle = document.getElementById("themeToggle")
+
+    // Check for saved theme preference or prefer-color-scheme
+    const savedTheme = localStorage.getItem("theme")
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+
+    // Set initial theme
+    if (savedTheme === "light") {
+        document.body.classList.remove("dark-theme")
+        document.body.classList.add("light-theme")
+    } else if (savedTheme === "dark" || prefersDark) {
+        document.body.classList.add("dark-theme")
+        document.body.classList.remove("light-theme")
     }
 
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll(".nav-menu a")
-    navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            if (navMenu.classList.contains("active")) {
-                menuToggle.setAttribute("aria-expanded", "false")
-                navMenu.classList.remove("active")
-                document.body.classList.remove("menu-open")
+    // Theme toggle functionality
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            if (document.body.classList.contains("dark-theme")) {
+                // Switch to light theme
+                document.body.classList.remove("dark-theme")
+                document.body.classList.add("light-theme")
+                localStorage.setItem("theme", "light")
+            } else {
+                // Switch to dark theme
+                document.body.classList.add("dark-theme")
+                document.body.classList.remove("light-theme")
+                localStorage.setItem("theme", "dark")
             }
         })
-    })
+    }
+}
 
-    // Header scroll effect
-    window.addEventListener("scroll", () => {
-        const header = document.querySelector(".site-header")
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled")
-        } else {
-            header.classList.remove("scrolled")
-        }
-    })
+/**
+ * Initialize mobile menu functionality
+ */
+function initMobileMenu() {
+    const menuToggle = document.getElementById("menuToggle")
+    const mobileMenu = document.getElementById("mobileMenu")
 
-    // Reveal elements on scroll
-    const revealElements = document.querySelectorAll(".reveal-on-scroll")
-    window.addEventListener("scroll", () => {
-        revealOnScroll(revealElements)
-    })
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+            document.body.classList.toggle("menu-open")
+        })
 
-    // Initialize reveal on load
-    revealOnScroll(revealElements)
-
-    // Initialize skill bars
-    const skillBars = document.querySelectorAll(".skill-level")
-    skillBars.forEach((bar) => {
-        const width = bar.getAttribute("data-level")
-        setTimeout(() => {
-            bar.style.width = width
-        }, 500)
-    })
-
-    // Testimonial Slider
-    initTestimonialSlider()
-
-    // Back to top button
-    const backToTopButton = document.querySelector(".back-to-top")
-    if (backToTopButton) {
-        backToTopButton.addEventListener("click", (e) => {
-            e.preventDefault()
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
+        // Close menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll("a")
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                document.body.classList.remove("menu-open")
             })
         })
     }
-})
+}
 
-// Update progress bar based on scroll position
-function updateProgressBar() {
-    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-    const scrollPosition = window.scrollY
+/**
+ * Initialize scroll progress bar
+ */
+function initProgressBar() {
     const progressBar = document.getElementById("progressBar")
 
     if (progressBar) {
-        const scrollPercentage = (scrollPosition / windowHeight) * 100
-        progressBar.style.width = scrollPercentage + "%"
-    }
-}
-
-// Reveal elements when they come into view
-function revealOnScroll(elements) {
-    const windowHeight = window.innerHeight
-    const revealPoint = 150
-
-    elements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top
-
-        if (elementTop < windowHeight - revealPoint) {
-            element.classList.add("active")
-        }
-    })
-}
-
-// Initialize testimonial slider
-function initTestimonialSlider() {
-    const track = document.querySelector(".testimonial-track")
-    const slides = document.querySelectorAll(".testimonial")
-    const dots = document.querySelectorAll(".dot")
-    const prevButton = document.querySelector(".prev-testimonial")
-    const nextButton = document.querySelector(".next-testimonial")
-
-    if (!track || slides.length === 0) return
-
-    let currentIndex = 0
-
-    // Set initial position
-    updateSlider()
-
-    // Add event listeners to controls
-    if (prevButton) {
-        prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length
-            updateSlider()
-        })
-    }
-
-    if (nextButton) {
-        nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % slides.length
-            updateSlider()
-        })
-    }
-
-    // Add event listeners to dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            currentIndex = index
-            updateSlider()
-        })
-    })
-
-    // Auto slide every 5 seconds
-    let interval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length
-        updateSlider()
-    }, 5000)
-
-    // Pause auto slide on hover
-    track.addEventListener("mouseenter", () => {
-        clearInterval(interval)
-    })
-
-    track.addEventListener("mouseleave", () => {
-        interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length
-            updateSlider()
-        }, 5000)
-    })
-
-    // Update slider position and active dot
-    function updateSlider() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`
-
-        dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentIndex)
+        window.addEventListener("scroll", () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+            const scrolled = (winScroll / height) * 100
+            progressBar.style.width = scrolled + "%"
         })
     }
 }
 
-// Handle CSS-only modals for keyboard accessibility
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        window.location.hash = ""
-    }
-})
+/**
+ * Initialize modal functionality
+ */
+function initModals() {
+    const modalTriggers = document.querySelectorAll(".portfolio-modal-trigger")
 
-// Add focus trap for modals
-const modals = document.querySelectorAll(".modal")
-modals.forEach((modal) => {
-    modal.addEventListener("keydown", (e) => {
-        if (e.key === "Tab") {
-            const focusableElements = modal.querySelectorAll(
-                'a[href], button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])',
-            )
-            const firstElement = focusableElements[0]
-            const lastElement = focusableElements[focusableElements.length - 1]
+    if (modalTriggers.length > 0) {
+        modalTriggers.forEach((trigger) => {
+            trigger.addEventListener("click", function (e) {
+                e.preventDefault()
+                const modalId = this.getAttribute("href").substring(1)
+                const modal = document.getElementById(modalId)
 
-            if (e.shiftKey) {
-                if (document.activeElement === firstElement) {
-                    lastElement.focus()
-                    e.preventDefault()
+                if (modal) {
+                    modal.classList.add("active")
+                    document.body.style.overflow = "hidden"
+
+                    // Close modal when clicking the close button
+                    const closeBtn = modal.querySelector(".modal-close")
+                    if (closeBtn) {
+                        closeBtn.addEventListener("click", () => {
+                            modal.classList.remove("active")
+                            document.body.style.overflow = ""
+                        })
+                    }
+
+                    // Close modal when clicking outside the content
+                    modal.addEventListener("click", (e) => {
+                        if (e.target === modal) {
+                            modal.classList.remove("active")
+                            document.body.style.overflow = ""
+                        }
+                    })
+
+                    // Close modal with Escape key
+                    document.addEventListener("keydown", (e) => {
+                        if (e.key === "Escape" && modal.classList.contains("active")) {
+                            modal.classList.remove("active")
+                            document.body.style.overflow = ""
+                        }
+                    })
                 }
-            } else {
-                if (document.activeElement === lastElement) {
-                    firstElement.focus()
-                    e.preventDefault()
+            })
+        })
+    }
+}
+
+/**
+ * Add smooth reveal animations to elements when they enter the viewport
+ */
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll(".animate-on-scroll")
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in")
+                    observer.unobserve(entry.target)
                 }
-            }
-        }
+            })
+        },
+        {
+            threshold: 0.1,
+        },
+    )
+
+    animatedElements.forEach((element) => {
+        observer.observe(element)
     })
-})
+}
+
+// Initialize scroll animations if supported
+if ("IntersectionObserver" in window) {
+    window.addEventListener("load", initScrollAnimations)
+}
