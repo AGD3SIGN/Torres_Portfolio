@@ -208,15 +208,18 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    // Update the testimonial slider functionality
     function updateTestimonials() {
-        const slider = document.querySelector(".testimonials-slider")
-
-        // Position all slides
-        testimonialSlides.forEach((slide, index) => {
-            slide.style.transform = `translateX(${(index - currentTestimonial) * 100}%)`
-            slide.style.opacity = index === currentTestimonial ? "1" : "0"
-            slide.style.zIndex = index === currentTestimonial ? "1" : "0"
+        // Hide all slides first
+        testimonialSlides.forEach((slide) => {
+            slide.classList.remove("active")
+            slide.style.transform = ""
+            slide.style.opacity = ""
+            slide.style.position = ""
         })
+
+        // Show only the current slide
+        testimonialSlides[currentTestimonial].classList.add("active")
 
         // Update dots
         document.querySelectorAll(".testimonial-dot").forEach((dot, index) => {
@@ -243,29 +246,30 @@ document.addEventListener("DOMContentLoaded", () => {
         updateTestimonials()
     }
 
-    testimonialNext.addEventListener("click", nextTestimonial)
-    testimonialPrev.addEventListener("click", prevTestimonial)
+    // Remove the code that positions testimonial slides initially
+    // Replace with this simpler initialization
+    if (testimonialSlides.length > 0) {
+        updateTestimonials()
 
-    // Position testimonial slides initially
-    testimonialSlides.forEach((slide, index) => {
-        slide.style.position = "absolute"
-        slide.style.width = "100%"
-        slide.style.transition = "transform 0.5s ease, opacity 0.5s ease"
-    })
-    updateTestimonials()
+        // Set up event listeners for navigation
+        testimonialNext.addEventListener("click", nextTestimonial)
+        testimonialPrev.addEventListener("click", prevTestimonial)
 
-    // Auto advance testimonials
-    let testimonialInterval = setInterval(nextTestimonial, 6000)
+        // Auto advance testimonials
+        let testimonialInterval = setInterval(nextTestimonial, 6000)
 
-    // Pause testimonials on hover
-    const testimonialContainer = document.querySelector(".testimonials-slider")
-    testimonialContainer.addEventListener("mouseenter", () => {
-        clearInterval(testimonialInterval)
-    })
+        // Pause testimonials on hover
+        const testimonialContainer = document.querySelector(".testimonials-slider")
+        if (testimonialContainer) {
+            testimonialContainer.addEventListener("mouseenter", () => {
+                clearInterval(testimonialInterval)
+            })
 
-    testimonialContainer.addEventListener("mouseleave", () => {
-        testimonialInterval = setInterval(nextTestimonial, 6000)
-    })
+            testimonialContainer.addEventListener("mouseleave", () => {
+                testimonialInterval = setInterval(nextTestimonial, 6000)
+            })
+        }
+    }
 
     // Portfolio Filtering
     filterBtns.forEach((btn) => {
@@ -376,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const successMessage = document.createElement("div")
                 successMessage.className = "form-success"
                 successMessage.innerHTML = `
-                      <i class="ri-check-line"></i>
+                      <i class="fas fa-check-circle"></i>
                       <h3>Message Sent Successfully!</h3>
                       <p>Thank you for your inquiry. I'll get back to you as soon as possible.</p>
                   `
