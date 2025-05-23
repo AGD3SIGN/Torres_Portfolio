@@ -3,1018 +3,185 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- Meta Names-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Professional web designer specializing in responsive, user-friendly websites for businesses and individuals">
-  <!-- Meta Properties -->
-  <meta property="og:title" content="Brandon Torres | Freelance Web Designer & Developer">
-  <meta property="og:description"
-    content="Professional web designer specializing in responsive, user-friendly websites for businesses and individuals">
-  <meta property="og:image" content="./images/og-image.jpg">
-  <meta property="og:url" content="https://www.brandonjosephtorres.com">
-  <meta property="og:type" content="website">
-  <!-- Title -->
-  <title>Brandon Torres | Freelance Web Designer & Developer</title>
-  <!-- Styles -->
+    content="Professional web developer specializing in clean, functional websites for modern businesses.">
+  <meta name="keywords" content="web developer, freelance, frontend, Brandon Torres, web design">
+  <title>Brandon Torres | Freelance Web Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Remixicon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-  <!-- Favicon -->
-  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-  <!-- Preload critical assets -->
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="preload" href="js/main.js" as="script">
 </head>
 
-<body class="dark-theme">
-  <!-- Progress Bar -->
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
+<body>
 
-  <!-- ==================== 
-  Header / Navigation 
-  ==================== -->
-  <header id="header">
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- Header -->
+  <header class="header">
     <div class="container">
       <!-- Logo -->
-      <div class="logo">
-        <a href="#home">
-          <span class="logo-text">Torres<span class="accent">Folio.</span></span>
-        </a>
+      <a href="#" class="logo">
+        <span class="logo-primary">Brandon</span><span class="logo-secondary">Torres</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="desktop-nav">
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="ri-sun-line theme-icon sun-icon"></i>
+          <i class="ri-moon-line theme-icon moon-icon"></i>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="btn btn-primary">Let's Talk!</a>
       </div>
 
-      <!-- Desktop Nav -->
-      <nav class="desktop-nav">
-        <ul>
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#portoflio" class="nav-link">Portfolio</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#process" class="nav-link">Process</a></li>
-          <li><a href="#blog" class="nav-link">Blog</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+      <!-- Mobile Controls -->
+      <div class="mobile-controls">
+        <!-- Theme Toggle for Mobile -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="ri-sun-line theme-icon sun-icon"></i>
+          <i class="ri-moon-line theme-icon moon-icon"></i>
+        </button>
 
-      <!-- Theme Toggle -->
-      <div class="theme-toggle">
-        <button id="themeToggle" aria-label="Toggle theme">
-          <i class="ri-sun-line light-icon"></i>
-          <i class="ri-moon-line dark-icon"></i>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="ri-menu-line"></i>
         </button>
       </div>
+    </div>
 
-      <!-- Menu Toggle -->
-      <div class="menu-toggle">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="mobile-menu">
+      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">
+        <i class="ri-close-line"></i>
+      </button>
+
+      <nav class="mobile-nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+
+        <!-- Mobile CTA -->
+        <a href="#contact" class="btn btn-primary mobile-cta">Let's Talk!</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu">
-    <nav>
-      <ul>
-        <li><a href="#" class="mobile-nav-link">Home</a></li>
-        <li><a href="#" class="mobile-nav-link">About</a></li>
-        <li><a href="#" class="mobile-nav-link">Portfolio</a></li>
-        <li><a href="#" class="mobile-nav-link">Services</a></li>
-        <li><a href="#" class="mobile-nav-link">Process</a></li>
-        <li><a href="#" class="mobile-nav-link">Blog</a></li>
-        <li><a href="#" class="mobile-nav-link">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+            <h1 class="hero-title">
+              Hi, I'm <span class="text-primary">Brandon Torres</span>
+            </h1>
+            <p class="hero-subtitle">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <div class="hero-buttons">
+              <a href="#portfolio" class="btn btn-primary">View My Work</a>
+              <a href="#contact" class="btn btn-primary">Let's Talk!</a>
+            </div>
+          </div>
 
-    <!-- Mobile CTA -->
-    <div class="mobile-cta">
-      <a href="#contact" class="btn btn-primary">Lets Talk!</a>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!-- Clients Section -->
+  <section id="clients" class="clients-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Trusted By</h2>
+
+      <div class="logos-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="logos-track">
+          <!-- First set of logos -->
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client1" alt="Client 1" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client2" alt="Client 2" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client3" alt="Client 3" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client4" alt="Client 4" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client5" alt="Client 5" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client6" alt="Client 6" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client7" alt="Client 7" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client8" alt="Client 8" class="client-logo">
+          </div>
+
+          <!-- Duplicate logos for infinite scrolling effect -->
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client1" alt="Client 1" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client2" alt="Client 2" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client3" alt="Client 3" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client4" alt="Client 4" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client5" alt="Client 5" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client6" alt="Client 6" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client7" alt="Client 7" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client8" alt="Client 8" class="client-logo">
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Social Icons -->
-    <div class="social-links">
-      <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
-      <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
-      <a href="#" aria-label="GitHub"><i class="ri-github-line"></i></a>
-    </div>
-  </div>
-
-  <!-- ==================== 
-  Main Content 
-  ==================== -->
-  <main>
-
-    <!-- ==================== 
-    Home Section 
-    ==================== -->
-    <section id="home" class="section">
-      <!-- Container -->
-      <div class="container">
-        <!-- Hero -->
-        <div class="hero">
-          <!-- Hero Content -->
-          <div class="hero-content">
-            <!-- Hero Title -->
-            <h1 class="animate-in">Crafting Digital Experiences That <span class="accent">Inspire</span></h1>
-            <!-- Hero Description -->
-            <p class="lead animate-in">I design and develop websites that help businesses stand out, engage customers,
-              and drive growth.</p>
-            <!-- Hero CTA -->
-            <div class="hero-cta animate-in">
-              <a href="#portfolio" class="btn btn-primary">View My Work!</a>
-              <a href="#contact" class="btn btn-secondary">Let's Talk!</a>
-            </div>
-          </div>
-          <!-- Hero Image -->
-          <div class="hero-image animate-in">
-            <img src="images/forest.jpg" alt="Brandon Torres | Freelance Web Developer" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Hero Intro -->
-        <div class="intro">
-          <!-- Intro Title -->
-          <h2>Specializing in</h2>
-          <!-- Specialties -->
-          <div class="specialties">
-            <div class="specialty animate-in">
-              <i class="ri-store-line"></i>
-              <h3>E-Commerce</h3>
-              <p>Converting visitors into customers with intuitive shopping experiences</p>
-            </div>
-            <div class="specialty animate-in">
-              <i class="ri-building-line"></i>
-              <h3>Corporate Sites</h3>
-              <p>Professional web presence that builds trust and credibility.</p>
-            </div>
-            <div class="specialty animate-in">
-              <i class="ri-palette-line"></i>
-              <h3>Creative Portfolios</h3>
-              <p>Showcasing your work with designs that capture attention</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Featured Projects -->
-        <div class="featured-projects">
-          <h2>Featured Projects</h2>
-          <!-- Carousel Container -->
-          <div class="carousel-container">
-            <div class="carousel">
-              <!-- Carousel Item -->
-              <div class="carousel-item">
-                <!-- Project Card -->
-                <div class="project-card">
-                  <div class="project-image">
-                    <img src="images/mockup1.jpeg" alt="Project 1" loading="lazy">
-                  </div>
-                  <!-- Project Info -->
-                  <div class="project-info">
-                    <!-- Project Title -->
-                    <h3>Modern E-Commerce Platform</h3>
-                    <!-- Project Description -->
-                    <p>A complete online shopping experience with seamless checkout process</p>
-                    <!-- Project View Case Study Button -->
-                    <a href="#portfolio" class="btn btn-text">View Case Study<i class="ri-arrow-right-line"></i></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Carousel Item -->
-              <div class="carousel-item">
-                <!-- Project Card -->
-                <div class="project-card">
-                  <div class="project-image">
-                    <img src="images/mockup1.jpeg" alt="Project 1" loading="lazy">
-                  </div>
-                  <!-- Project Info -->
-                  <div class="project-info">
-                    <!-- Project Title -->
-                    <h3>Modern E-Commerce Platform</h3>
-                    <!-- Project Description -->
-                    <p>A complete online shopping experience with seamless checkout process</p>
-                    <!-- Project View Case Study Button -->
-                    <a href="#portfolio" class="btn btn-text">View Case Study<i class="ri-arrow-right-line"></i></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Carousel Item -->
-              <div class="carousel-item">
-                <!-- Project Card -->
-                <div class="project-card">
-                  <div class="project-image">
-                    <img src="images/mockup1.jpeg" alt="Project 1" loading="lazy">
-                  </div>
-                  <!-- Project Info -->
-                  <div class="project-info">
-                    <!-- Project Title -->
-                    <h3>Modern E-Commerce Platform</h3>
-                    <!-- Project Description -->
-                    <p>A complete online shopping experience with seamless checkout process</p>
-                    <!-- Project View Case Study Button -->
-                    <a href="#portfolio" class="btn btn-text">View Case Study<i class="ri-arrow-right-line"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Carousel Controls -->
-            <div class="carousel-controls">
-              <!-- Carousel Left -->
-              <button class="carousel-prev" aria-label="Previous project">
-                <i class="ri-arrow-left-s-line"></i>
-              </button>
-              <!-- Carousel Dots -->
-              <div class="carousel-dots"></div>
-              <!-- Carousel Right -->
-              <button class="carousel-next" aria-label="Next project">
-                <i class="ri-arrow-right-s-line"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA Banner -->
-        <div class="cta-banner">
-          <h2>Ready to elevate your online presence?</h2>
-          <p>Let's create a website that perfectly represents your brand and connects with your audience.</p>
-          <a href="#contact" class="btn btn-primary">Let's Work Together!</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 
-    About Section 
-    ==================== -->
-    <section id="about" class="section">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="section-header">
-          <!-- Section Title -->
-          <h2>About Me</h2>
-          <!-- Section Description -->
-          <p class="section-subtitle">Get to know the person behind the designs</p>
-        </div>
-
-        <!-- About Content -->
-        <div class="about-content">
-          <!-- About Image -->
-          <div class="about-image animate-in">
-            <img src="images/portrait.jpg" alt="" loading="lazy">
-          </div>
-          <!-- About Text -->
-          <div class="about-text animate-in">
-            <h3>Hi, I'm <span class="accent">Brandon Torres</span></h3>
-            <p class="lead">A passionate web designer with over 8 years of experience creating beautiful, functional
-              websites that deliver results.</p>
-            <p>I combine technical expertise with creative vision to build digital experiences that not only look great
-              but also perform exceptionally well. My approach focuses on understanding your business goals and
-              translating them into effective web solutions.</p>
-            <p>Having worked with clients ranging from startups to established businesses, I've developed a versatile
-              skill set that allows me to tackle projects of any size or complexity.</p>
-            <!-- About CTA -->
-            <div class="about-cta">
-              <a href="#contact" class="btn btn-primary">Let's Work Together!</a>
-              <a href="resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- About Skills -->
-        <div class="skills">
-          <h3>Technical Skills</h3>
-          <!-- Skills Container -->
-          <div class="skills-container">
-            <!-- Skills Category 1 -->
-            <div class="skill-category">
-              <h4>Design</h4>
-              <!-- Skill Item -->
-              <div class="skill-items">
-                <!-- Skill Item 1 -->
-                <div class="skill-item">
-                  <span class="skill-name">UI/UX Design</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 95%;"></div>
-                  </div>
-                </div>
-                <!-- Skill Item 2 -->
-                <div class="skill-item">
-                  <span class="skill-name">UI/UX Design</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 95%;"></div>
-                  </div>
-                </div>
-                <!-- Skill Item 3-->
-                <div class="skill-item">
-                  <span class="skill-name">UI/UX Design</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 95%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Skill Category 2 -->
-            <div class="skill-category">
-              <h4>Development</h4>
-              <div class="skill-items">
-                <!-- Skill Item 1 -->
-                <div class="skill-item">
-                  <span class="skill-name">HTML5</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 98%"></div>
-                  </div>
-                </div>
-                <!-- Skill Item 2 -->
-                <div class="skill-item">
-                  <span class="skill-name">CSS3/SASS</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 95%"></div>
-                  </div>
-                </div>
-                <!-- Skill Item 3 -->
-                <div class="skill-item">
-                  <span class="skill-name">JavaScript</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 90%"></div>
-                  </div>
-                </div>
-                <!-- Skill Item 4 -->
-                <div class="skill-item">
-                  <span class="skill-name">Responsive Design</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 100%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Skill Category 3 -->
-            <div class="skill-category">
-              <h4>Tools</h4>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <span class="skill-name">Figma</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Adobe XD</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Photoshop</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Git</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 80%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Design Approach -->
-        <div class="design-approach">
-          <h3>My Design Approach</h3>
-          <!-- Approach Steps -->
-          <div class="approach-steps">
-            <!-- Step #1 -->
-            <div class="approach-step animate-in">
-              <div class="step-number">01 <i class="ri-survey-line"></i></div>
-              <h4>Research & Discovery</h4>
-              <p>Understanding your business, audience, and goals to create a strategic foundation.</p>
-            </div>
-            <!-- Step #2 -->
-            <div class="approach-step animate-in">
-              <div class="step-number">02 <i class="ri-lightbulb-line"></i></div>
-              <h4>Conceptualization</h4>
-              <p>Developing ideas and solutions that address your specific needs and challenges.</p>
-            </div>
-            <!-- Step #3 -->
-            <div class="approach-step animate-in">
-              <div class="step-number">03 <i class="ri-palette-line"></i></div>
-              <h4>Design & Iteration</h4>
-              <p>Creating visual designs with a focus on aesthetics, usability, and functionality.</p>
-            </div>
-            <!-- Step #4 -->
-            <div class="approach-step animate-in">
-              <div class="step-number">04 <i class="ri-code-s-slash-line"></i></div>
-              <h4>Development & Testing</h4>
-              <p>Building robust, responsive websites with clean code and thorough testing.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Personal Touch -->
-        <div class="personal-touch">
-          <h3>What Sets Me Apart</h3>
-          <!-- Qualities -->
-          <div class="unique-qualities">
-            <!-- Quality #1 -->
-            <div class="quality animate-in">
-              <i class="ri-discuss-line"></i>
-              <h4>Clear Communication</h4>
-              <p>I believe in transparent, jargon-free communication throughout the project.</p>
-            </div>
-            <!-- Quality #2 -->
-            <div class="quality animate-in">
-              <i class="ri-puzzle-line"></i>
-              <h4>Problem Solver</h4>
-              <p>I approach each project as a unique challenge with creative solutions.</p>
-            </div>
-            <!-- Quality #3 -->
-            <div class="quality animate-in">
-              <i class="ri-line-chart-line"></i>
-              <h4>Results-Driven</h4>
-              <p>My designs focus on achieving your business objectives, not just looking good.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 
-    Portfolio Section 
-    ==================== -->
-    <section id="portfolio" class="section">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="section-header">
-          <h2>Portfolio</h2>
-          <p class="section-subtitle">Explore my recent projects and case studies</p>
-        </div>
-
-        <!-- Portfolio Filter -->
-        <div class="portfolio-filters">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="website">Websites</button>
-          <button class="filter-btn" data-filter="photoshop">Photoshop</button>
-          <button class="filter-btn" data-filter="illustrator">Illustrator</button>
-          <button class="filter-btn" data-filter="indesign">InDesign</button>
-          <button class="filter-btn" data-filter="effects">After Effects</button>
-        </div>
-
-        <!-- Portfolio Grid -->
-        <div class="portfolio-grid">
-          <!-- Project 1 -->
-          <div class="portfolio-item" data-category="ecommerce">
-            <div class="portfolio-image">
-              <img src="images/landscape.jpg" alt="E-commerce Website Project" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-content">
-                  <h3>Project #1</h3>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <a href="#" class="btn btn-text portfolio-link" data-project="website">View Case Study</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Project 2 -->
-          <div class="portfolio-item" data-category="ecommerce">
-            <div class="portfolio-image">
-              <img src="images/landscape.jpg" alt="E-commerce Website Project" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-content">
-                  <h3>Project #2</h3>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <a href="#" class="btn btn-text portfolio-link" data-project="photoshop">View Case Study</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Project 3 -->
-          <div class="portfolio-item" data-category="ecommerce">
-            <div class="portfolio-image">
-              <img src="images/landscape.jpg" alt="E-commerce Website Project" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-content">
-                  <h3>Project #3</h3>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <a href="#" class="btn btn-text portfolio-link" data-project="photoshop">View Case Study</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Project 4 -->
-          <div class="portfolio-item" data-category="ecommerce">
-            <div class="portfolio-image">
-              <img src="images/landscape.jpg" alt="E-commerce Website Project" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-content">
-                  <h3>Project #4</h3>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <a href="#" class="btn btn-text portfolio-link" data-project="illustrator">View Case Study</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Project 5 -->
-          <div class="portfolio-item" data-category="ecommerce">
-            <div class="portfolio-image">
-              <img src="images/landscape.jpg" alt="E-commerce Website Project" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-content">
-                  <h3>Project #5</h3>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <a href="#" class="btn btn-text portfolio-link" data-project="indesign">View Case Study</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Project 6 -->
-          <div class="portfolio-item" data-category="ecommerce">
-            <div class="portfolio-image">
-              <img src="images/landscape.jpg" alt="E-commerce Website Project" loading="lazy">
-              <div class="portfolio-overlay">
-                <div class="overlay-content">
-                  <h3>Project #6</h3>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <a href="#" class="btn btn-text portfolio-link" data-project="website">View Case Study</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Modal -->
-        <div class="project-modal" id="projectModal">
-          <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal">
-              <i class="ri-close-line"></i>
-            </button>
-            <div class="modal-body">
-              <!-- Content will be loaded dynamically -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Details (hidden, loaded in modal) -->
-        <div class="project-details" id="project1" style="display: none;">
-          <div class="project-header">
-            <h2>Modern E-Commerce Platform</h2>
-            <p class="project-category">E-Commerce, UI/UX Design, Development</p>
-          </div>
-          <div class="project-overview">
-            <div class="project-image-full">
-              <img src="images/project1-full.jpg" alt="E-commerce Website Full View" loading="lazy">
-            </div>
-            <div class="project-info-full">
-              <div class="project-problem">
-                <h3>The Challenge</h3>
-                <p>The client needed a complete e-commerce solution that would showcase their product line effectively
-                  while providing a seamless shopping experience. Their existing platform had poor conversion rates and
-                  wasn't mobile-friendly.</p>
-              </div>
-              <div class="project-approach">
-                <h3>My Approach</h3>
-                <p>I conducted extensive user research to understand the target audience's shopping behaviors and
-                  preferences. Based on these insights, I designed an intuitive interface with a streamlined checkout
-                  process and enhanced product visualization.</p>
-              </div>
-              <div class="project-features">
-                <h3>Key Features</h3>
-                <ul>
-                  <li>Responsive product galleries with zoom functionality</li>
-                  <li>Intelligent product filtering and search</li>
-                  <li>One-page checkout with progress indicators</li>
-                  <li>Integrated reviews and ratings system</li>
-                  <li>Personalized product recommendations</li>
-                </ul>
-              </div>
-              <div class="project-challenges">
-                <h3>Technical Challenges</h3>
-                <p>The main challenge was optimizing the site for both performance and visual appeal. I implemented lazy
-                  loading for images, utilized modern CSS techniques for animations, and created a custom caching
-                  strategy to ensure fast page loads even with high-resolution product images.</p>
-              </div>
-              <div class="project-results">
-                <h3>Results</h3>
-                <div class="result-metrics">
-                  <div class="metric">
-                    <span class="metric-value">43%</span>
-                    <span class="metric-label">Increase in Conversion Rate</span>
-                  </div>
-                  <div class="metric">
-                    <span class="metric-value">67%</span>
-                    <span class="metric-label">Reduction in Cart Abandonment</span>
-                  </div>
-                  <div class="metric">
-                    <span class="metric-value">2.5x</span>
-                    <span class="metric-label">Increase in Mobile Sales</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-testimonial">
-                <blockquote>
-                  "The new website completely transformed our online business. The intuitive design and smooth checkout
-                  process have significantly increased our sales and customer satisfaction."
-                </blockquote>
-                <cite>— John Smith, CEO</cite>
-              </div>
-            </div>
-          </div>
-          <div class="project-gallery">
-            <h3>Project Gallery</h3>
-            <div class="gallery-grid">
-              <div class="gallery-item">
-                <img src="images/project1-wireframe.jpg" alt="E-commerce Wireframe" loading="lazy">
-                <p>Initial wireframes</p>
-              </div>
-              <div class="gallery-item">
-                <img src="images/project1-mockup.jpg" alt="E-commerce Mockup" loading="lazy">
-                <p>Design mockups</p>
-              </div>
-              <div class="gallery-item">
-                <img src="images/project1-mobile.jpg" alt="E-commerce Mobile View" loading="lazy">
-                <p>Mobile optimization</p>
-              </div>
-              <div class="gallery-item">
-                <img src="images/project1-checkout.jpg" alt="E-commerce Checkout Process" loading="lazy">
-                <p>Checkout flow</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Additional project details would be added here -->
-      </div>
-    </section>
-
-    <!-- ==================== 
-    Services Section 
-    ==================== -->
-    <section id="services" class="section">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="section-header">
-          <h2>Services</h2>
-          <p class="section-subtitle">Comprehensive web design solutions tailored to your needs</p>
-        </div>
-        <!-- Services Grid -->
-        <div class="services-grid">
-
-          <!-- Services Card 1 -->
-          <div class="service-card animate-in">
-            <div class="service-icon">
-              <i class="ri-paint-brush-line"></i>
-            </div>
-            <h3>UI/UX Design</h3>
-            <p>Creating intuitive, engaging user experiences that keep visitors coming back.</p>
-            <!-- Service Features List -->
-            <ul class="service-features">
-              <li>User Research & Personas</li>
-              <li>Wireframing & Prototyping</li>
-              <li>Interface Design</li>
-              <li>Usability Testing</li>
-            </ul>
-          </div>
-
-          <!-- Services Card 2 -->
-          <div class="service-card animate-in">
-            <div class="service-icon">
-              <i class="ri-code-s-slash-line"></i>
-            </div>
-            <h3>Website Development</h3>
-            <p>Building responsive, high-performance websites with clean, semantic code.</p>
-            <!-- Service Features List -->
-            <ul class="service-features">
-              <li>HTML5/CSS3/JavaScript</li>
-              <li>Responsive Design</li>
-              <li>Cross-Browser Compatibility</li>
-              <li>Performance Optimization</li>
-            </ul>
-          </div>
-
-          <!-- Services Card 3 -->
-          <div class="service-card animate-in">
-            <div class="service-icon">
-              <i class="ri-shopping-cart-line"></i>
-            </div>
-            <h3>E-Commerce Solutions</h3>
-            <p>Creating online stores that drive sales and provide excellent shopping experiences.</p>
-            <!-- Service Features List -->
-            <ul class="service-features">
-              <li>Product Catalog Design</li>
-              <li>Shopping Cart Implementation</li>
-              <li>Payment Gateway Integration</li>
-              <li>Inventory Management</li>
-            </ul>
-          </div>
-
-          <!-- Services Card 4 -->
-          <div class="service-card animate-in">
-            <div class="service-icon">
-              <i class="ri-smartphone-line"></i>
-            </div>
-            <h3>Responsive Web Design</h3>
-            <p>Ensuring your website looks and functions perfectly on all devices and screen sizes.</p>
-            <!-- Service Features List -->
-            <ul class="service-features">
-              <li>Mobile-First Approach</li>
-              <li>Adaptive Layouts</li>
-              <li>Touch-Friendly Interfaces</li>
-              <li>Device Testing</li>
-            </ul>
-          </div>
-
-          <div class="service-card animate-in">
-            <div class="service-icon">
-              <i class="ri-search-line"></i>
-            </div>
-            <h3>SEO Optimization</h3>
-            <p>Improving your website's visibility in search engines to attract more visitors.</p>
-            <!-- Service Features List -->
-            <ul class="service-features">
-              <li>Keyword Research</li>
-              <li>On-Page Optimization</li>
-              <li>Performance Improvements</li>
-              <li>Technical SEO</li>
-            </ul>
-          </div>
-
-          <div class="service-card animate-in">
-            <div class="service-icon">
-              <i class="ri-tools-line"></i>
-            </div>
-            <h3>Website Maintenance</h3>
-            <p>Keeping your website up-to-date, secure, and performing optimally.</p>
-            <!-- Service Features List -->
-            <ul class="service-features">
-              <li>Regular Updates</li>
-              <li>Security Monitoring</li>
-              <li>Performance Optimization</li>
-              <li>Content Updates</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Service Packages -->
-        <div class="service-packages">
-          <h3>Service Packages</h3>
-          <div class="packages-container">
-            <div class="package-card animate-in">
-              <div class="package-header">
-                <h4>Starter</h4>
-                <div class="package-price">
-                  <span class="price">$1,200</span>
-                  <span class="period">one-time</span>
-                </div>
-              </div>
-              <div class="package-body">
-                <ul class="package-features">
-                  <li>5-Page Responsive Website</li>
-                  <li>Basic SEO Setup</li>
-                  <li>Contact Form</li>
-                  <li>Mobile Optimization</li>
-                  <li>1 Round of Revisions</li>
-                </ul>
-                <p class="package-description">Perfect for small businesses or individuals looking to establish an
-                  online presence.</p>
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-              </div>
-            </div>
-
-            <div class="package-card featured animate-in">
-              <div class="package-badge">Most Popular</div>
-              <div class="package-header">
-                <h4>Professional</h4>
-                <div class="package-price">
-                  <span class="price">$2,800</span>
-                  <span class="period">one-time</span>
-                </div>
-              </div>
-              <div class="package-body">
-                <ul class="package-features">
-                  <li>10-Page Custom Website</li>
-                  <li>Advanced SEO Implementation</li>
-                  <li>Custom Contact Forms</li>
-                  <li>Content Management System</li>
-                  <li>Social Media Integration</li>
-                  <li>3 Rounds of Revisions</li>
-                  <li>1 Month Maintenance</li>
-                </ul>
-                <p class="package-description">Ideal for growing businesses that need a comprehensive web presence.</p>
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-              </div>
-            </div>
-
-            <div class="package-card animate-in">
-              <div class="package-header">
-                <h4>E-Commerce</h4>
-                <div class="package-price">
-                  <span class="price">$4,500</span>
-                  <span class="period">one-time</span>
-                </div>
-              </div>
-              <div class="package-body">
-                <ul class="package-features">
-                  <li>Full E-Commerce Website</li>
-                  <li>Product Catalog (up to 100 items)</li>
-                  <li>Payment Gateway Integration</li>
-                  <li>Inventory Management</li>
-                  <li>Order Tracking System</li>
-                  <li>SEO & Performance Optimization</li>
-                  <li>3 Months Maintenance</li>
-                </ul>
-                <p class="package-description">Complete solution for businesses looking to sell products online.</p>
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Unique Selling -->
-        <div class="unique-selling">
-          <h3>Why Choose My Services?</h3>
-          <div class="usp-grid">
-            <div class="usp-item animate-in">
-              <i class="ri-group-3-line"></i>
-              <h4>Client-Centered Approach</h4>
-              <p>Your goals and vision are at the center of every design decision.</p>
-            </div>
-            <div class="usp-item animate-in">
-              <i class="ri-speed-up-line"></i>
-              <h4>Performance-Focused</h4>
-              <p>Websites that not only look great but load quickly and function smoothly.</p>
-            </div>
-            <div class="usp-item animate-in">
-              <i class="ri-smartphone-line"></i>
-              <h4>Truly Responsive</h4>
-              <p>Designs that adapt perfectly to all devices, from desktops to smartphones.</p>
-            </div>
-            <div class="usp-item animate-in">
-              <i class="ri-search-line"></i>
-              <h4>Conversion-Optimized</h4>
-              <p>Strategic designs that guide visitors toward taking desired actions.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 
-    Testimonial Section 
-    ==================== -->
-    <section id="testimonials" class="section">
-      <div class="container">
-          <div class="section-header">
-              <h2>Testimonials</h2>
-              <p class="section-subtitle">What my clients say about working with me</p>
-          </div>
-
-          <div class="testimonials-slider">
-              <div class="testimonial-slide">
-                  <div class="testimonial-card">
-                      <div class="testimonial-content">
-                          <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
-                          <blockquote>
-                              Working with this designer was a game-changer for our business. They took the time to understand our brand and created a website that perfectly represents who we are. The increase in leads since launching has been remarkable.
-                          </blockquote>
-                      </div>
-                      <div class="testimonial-author">
-                          <div class="author-image">
-                              <img src="images/portrait.jpg" alt="Sarah Johnson" loading="lazy">
-                          </div>
-                          <div class="author-info">
-                              <h4>Sarah Johnson</h4>
-                              <p>CEO, Innovate Solutions</p>
-                          </div>
-                      </div>
-                      <div class="testimonial-metrics">
-                          <div class="metric">
-                              <span class="metric-value">156%</span>
-                              <span class="metric-label">Increase in Leads</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="testimonial-slide">
-                  <div class="testimonial-card">
-                      <div class="testimonial-content">
-                          <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
-                          <blockquote>
-                              The e-commerce site they designed for us exceeded all expectations. The attention to detail and focus on user experience has transformed our online sales. Our conversion rate has nearly doubled since the redesign.
-                          </blockquote>
-                      </div>
-                      <div class="testimonial-author">
-                          <div class="author-image">
-                              <img src="images/portrait.jpg" alt="Michael Chen" loading="lazy">
-                          </div>
-                          <div class="author-info">
-                              <h4>Michael Chen</h4>
-                              <p>Founder, Urban Threads</p>
-                          </div>
-                      </div>
-                      <div class="testimonial-metrics">
-                          <div class="metric">
-                              <span class="metric-value">94%</span>
-                              <span class="metric-label">Increase in Conversion Rate</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="testimonial-slide">
-                  <div class="testimonial-card">
-                      <div class="testimonial-content">
-                          <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
-                          <blockquote>
-                              I needed a portfolio that would showcase my photography work in the best possible light. The result was beyond my expectations—elegant, fast-loading, and with perfect image presentation. I've received countless compliments on the design.
-                          </blockquote>
-                      </div>
-                      <div class="testimonial-author">
-                          <div class="author-image">
-                              <img src="images/portrait.jpg" alt="Emma Rodriguez" loading="lazy">
-                          </div>
-                          <div class="author-info">
-                              <h4>Emma Rodriguez</h4>
-                              <p>Professional Photographer</p>
-                          </div>
-                      </div>
-                      <div class="testimonial-metrics">
-                          <div class="metric">
-                              <span class="metric-value">3x</span>
-                              <span class="metric-label">Increase in Client Inquiries</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="testimonial-controls">
-              <button class="testimonial-prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-              <div class="testimonial-dots"></div>
-              <button class="testimonial-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-          </div>
-
-          <div class="client-logos">
-              <h3>Trusted By</h3>
-              <div class="logos-grid">
-                  <div class="logo-item"><img src="images/logo4.svg" alt="Client Logo 1" loading="lazy"></div>
-                  <div class="logo-item"><img src="images/logo6.svg" alt="Client Logo 2" loading="lazy"></div>
-                  <div class="logo-item"><img src="images/logo2.svg" alt="Client Logo 3" loading="lazy"></div>
-                  <div class="logo-item"><img src="images/logo7.svg" alt="Client Logo 4" loading="lazy"></div>
-                  <div class="logo-item"><img src="images/logo5.svg" alt="Client Logo 5" loading="lazy"></div>
-              </div>
-          </div>
-      </div>
   </section>
 
-    <!-- ==================== 
-    Process Section 
-    ==================== -->
-    <section id="process" class="section">
-      <div class="container">
-        <!-- Section Header -->
-        <h2>My Process</h2>
-        <p class="section-subtitle">How we'll work together to bring your vision to life</p>
-        <!-- Process Timeline -->
-        <div class="process-timeline">
-          <div class="timeline-item animate-in">
-            <div class="timeline-number">01</div>
-            <div class="timeline-content">
-              <h3>Discovery</h3>
-              <p>We begin with a thorough consultation to understand your business, goals, target audience, and project
-                requirements.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== 
-    Blog Section 
-    ==================== -->
-
-    <!-- ==================== 
-    Contact Section 
-    ==================== -->
-
-    <!-- ==================== 
-    Footer Section 
-    ==================== -->
-
-    <!-- ==================== 
-    Back-To-Top Button 
-    ==================== -->
+  <!-- Testimonial Section -->
 
 
 
 
 
 
-
-
-
-  </main>
 
   <script src="js/main.js"></script>
 </body>
