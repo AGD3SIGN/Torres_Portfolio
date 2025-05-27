@@ -4,647 +4,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandon Torres - Freelance Web Developer</title>
   <meta name="description"
-    content="Freelance Web Developer specializing in modern, responsive websites and web applications.">
-
-  <!-- Preload critical fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&  family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-
-  <!-- Remix Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
-  <!-- AOS Animation Library -->
+    content="Professional web developer specializing in clean, functional websites for modern businesses.">
+  <meta name="keywords" content="web developer, freelance, frontend, Brandon Torres, web design">
+  <title>Brandon Torres | Freelance Web Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <!-- Progress Bar -->
-  <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container container">
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
       <!-- Logo -->
-      <div class="nav-logo">
-        <a href="#home">Torres<span>Folio.</span></a>
-      </div>
-      <!-- Nav Menu -->
-      <ul class="nav-menu" id="navMenu">
-        <li class="nav-link"><a href="#home">Home</a></li>
-        <li class="nav-link"><a href="#about">About</a></li>
-        <li class="nav-link"><a href="#projects">Projects</a></li>
-        <li class="nav-link"><a href="#resume">Resume</a></li>
-        <li class="nav-link"><a href="#contact">Contact</a></li>
-        <li class="nav-item">
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <i class="ri-sun-line light-icon"></i>
-            <i class="ri-moon-line dark-icon"></i>
-          </button>
-        </li>
-      </ul>
+      <a href="#" class="logo">
+        <span class="logo-primary">Brandon</span><span class="logo-secondary">Torres</span>
+      </a>
 
-      <!-- Hamburger Icon -->
-      <div class="hamburger" id="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <!-- Hero Content -->
-      <div class="hero-content">
-        <!-- Hero Text Container -->
-        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
-          <!-- Hero Title -->
-          <h1>Hi, I'm <span class="highlight">Brandon Torres</span></h1>
-          <!-- Typing Container -->
-          <div class="typing-container">
-            <span class="typing-text" id="typingText"></span>
-            <span class="cursor">|</span>
-          </div>
-          <!-- Hero Description -->
-          <p>Crafting digital experiences that blend creativity with functionality. Specializing in modern web
-            development with a focus on performance and user experience.</p>
-          <!-- Hero CTA -->
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contacts" class="btn btn-secondary">Let's Talk!</a>
-          </div>
-        </div>
-
-        <!-- Hero Image Container -->
-        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-          <div class="image-container">
-            <img src="images/about.jpg" alt="Brandon Torres - Web Developer" loading="lazy">
-            <div class="floating-elements">
-              <div class="floating-element" style="--delay: 0s;">
-                <i class="ri-code-s-slash-line"></i>
-              </div>
-              <div class="floating-element" style="--delay: 1s;">
-                <i class="ri-palette-line"></i>
-              </div>
-              <div class="floating-element" style="--delay: 2s;">
-                <i class="ri-smartphone-line"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p>Get to know the person behind the code</p>
-      </div>
-      <div class="about-content">
-        <div class="about-text" data-aos="fade-right" data-aos-delay="200">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam officia doloribus nobis, est error
-            placeat modi consequatur illum laboriosam, velit voluptates corporis, voluptatum eaque quos cumque ipsa
-            blanditiis minus iste vitae magnam consequuntur provident. Facilis ratione sit eos optio! Vel suscipit ipsa
-            veritatis iusto aut, esse quod incidunt laborum aliquid.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit laborum, exercitationem accusantium quasi
-            consequatur hic quod natus voluptas amet eaque provident vero incidunt, neque eveniet.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-number" data-count="50">0</span>
-              <span class="stat-label">Projects Completed</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-count="3">0</span>
-              <span class="stat-label">Happy Clients</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-count="5">0</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-          </div>
-        </div>
-        <div class="about-image" data-aos="fade-left" data-aos-delay="400">
-          <img src="/placeholder.svg?height=500&width=400" alt="About Alex Chen" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Skills & Technologies</h2>
-        <p>The tools I use to bring ideas to life</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-          <h3>Frontend</h3>
-          <div class="skill-item">
-            <span class="skill-name">HTML/CSS</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="95"></div>
-            </div>
-            <span class="skill-percentage">95%</span>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">JavaScript</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90"></div>
-            </div>
-            <span class="skill-percentage">90%</span>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">React</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85"></div>
-            </div>
-            <span class="skill-percentage">85%</span>
-          </div>
-        </div>
-
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-          <h3>Backend</h3>
-          <div class="skill-item">
-            <span class="skill-name">Node.js</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80"></div>
-            </div>
-            <span class="skill-percentage">80%</span>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Python</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75"></div>
-            </div>
-            <span class="skill-percentage">75%</span>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">MongoDB</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="70"></div>
-            </div>
-            <span class="skill-percentage">70%</span>
-          </div>
-        </div>
-
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-          <h3>Tools</h3>
-          <div class="skill-item">
-            <span class="skill-name">Git/GitHub</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90"></div>
-            </div>
-            <span class="skill-percentage">90%</span>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Figma</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85"></div>
-            </div>
-            <span class="skill-percentage">85%</span>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Docker</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="65"></div>
-            </div>
-            <span class="skill-percentage">65%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Featured Projects</h2>
-        <p>A showcase of my recent work and achievements</p>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-image">
-            <img src="/placeholder.svg?height=250&width=400" alt="E-commerce Platform" loading="lazy">
-            <div class="project-overlay">
-              <button class="btn btn-primary" onclick="openModal('project1')">View Details</button>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>E-commerce Platform</h3>
-            <p>A full-stack e-commerce solution with modern design and seamless user experience.</p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MongoDB</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-image">
-            <img src="/placeholder.svg?height=250&width=400" alt="Task Management App" loading="lazy">
-            <div class="project-overlay">
-              <button class="btn btn-primary" onclick="openModal('project2')">View Details</button>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>Task Management App</h3>
-            <p>A collaborative task management application with real-time updates and team features.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Vue.js</span>
-              <span class="tech-tag">Firebase</span>
-              <span class="tech-tag">PWA</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-image">
-            <img src="/placeholder.svg?height=250&width=400" alt="Portfolio Website" loading="lazy">
-            <div class="project-overlay">
-              <button class="btn btn-primary" onclick="openModal('project3')">View Details</button>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>Creative Portfolio</h3>
-            <p>A stunning portfolio website for a digital artist with interactive galleries and animations.</p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML/CSS</span>
-              <span class="tech-tag">GSAP</span>
-              <span class="tech-tag">Three.js</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resume/Timeline Section -->
-  <section id="resume" class="resume">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Experience & Education</h2>
-        <p>My professional journey and milestones</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2022 - Present</div>
-            <h3>Senior Frontend Developer</h3>
-            <h4>TechCorp Solutions</h4>
-            <p>Leading frontend development for enterprise applications, mentoring junior developers, and implementing
-              modern development practices.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2020 - 2022</div>
-            <h3>Full Stack Developer</h3>
-            <h4>StartupXYZ</h4>
-            <p>Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with design and
-              product teams to deliver user-focused solutions.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2018 - 2020</div>
-            <h3>Junior Web Developer</h3>
-            <h4>Digital Agency Pro</h4>
-            <p>Built responsive websites and web applications for various clients. Gained experience in multiple
-              frameworks and content management systems.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2014 - 2018</div>
-            <h3>Computer Science Degree</h3>
-            <h4>University of Technology</h4>
-            <p>Bachelor's degree in Computer Science with focus on web technologies, algorithms, and software
-              engineering principles.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>What Clients Say</h2>
-        <p>Testimonials from satisfied clients and collaborators</p>
-      </div>
-      <div class="testimonials-container">
-        <div class="testimonials-wrapper" id="testimonialsWrapper">
-          <div class="testimonial-card active">
-            <div class="testimonial-content">
-              <div class="quote-icon">
-                <i class="ri-double-quotes-l"></i>
-              </div>
-              <p>"Alex delivered an exceptional e-commerce platform that exceeded our expectations. The attention to
-                detail and user experience is outstanding."</p>
-              <div class="testimonial-author">
-                <img src="/placeholder.svg?height=60&width=60" alt="Sarah Johnson" loading="lazy">
-                <div class="author-info">
-                  <h4>Sarah Johnson</h4>
-                  <span>CEO, RetailCorp</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <div class="quote-icon">
-                <i class="ri-double-quotes-l"></i>
-              </div>
-              <p>"Working with Alex was a pleasure. Professional, timely, and the final product was exactly what we
-                envisioned. Highly recommended!"</p>
-              <div class="testimonial-author">
-                <img src="/placeholder.svg?height=60&width=60" alt="Michael Brown" loading="lazy">
-                <div class="author-info">
-                  <h4>Michael Brown</h4>
-                  <span>Founder, StartupHub</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <div class="quote-icon">
-                <i class="ri-double-quotes-l"></i>
-              </div>
-              <p>"The portfolio website Alex created for me perfectly captures my artistic vision. The animations and
-                interactions are simply beautiful."</p>
-              <div class="testimonial-author">
-                <img src="/placeholder.svg?height=60&width=60" alt="Emma Davis" loading="lazy">
-                <div class="author-info">
-                  <h4>Emma Davis</h4>
-                  <span>Digital Artist</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonials-nav">
-          <button class="nav-btn prev-btn" id="prevBtn">
-            <i class="ri-arrow-left-s-line"></i>
-          </button>
-          <div class="testimonials-dots" id="testimonialsDots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-          </div>
-          <button class="nav-btn next-btn" id="nextBtn">
-            <i class="ri-arrow-right-s-line"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Let's Work Together</h2>
-        <p>Ready to start your next project? Get in touch!</p>
-      </div>
-      <div class="contact-content">
-        <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-mail-line"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Email</h3>
-              <p>brandon.agdesign@email.com</p>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-phone-line"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Phone</h3>
-              <p>+1 (555) 123-4567</p>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="ri-map-pin-line"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Location</h3>
-              <p>Central Arkansas</p>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="GitHub">
-              <i class="ri-github-line"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <i class="ri-linkedin-line"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <i class="ri-twitter-line"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Dribbble">
-              <i class="ri-dribbble-line"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-map" data-aos="fade-left" data-aos-delay="400">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0197!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1234567890"
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Location Map">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-text">
-          <p>&copy; 2024 Brandon Torres. All rights reserved.</p>
-        </div>
-        <div class="footer-links">
+      <!-- Desktop Navigation -->
+      <div class="desktop-nav">
+        <nav class="nav-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#services">Services</a>
           <a href="#contact">Contact</a>
-        </div>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="ri-sun-line theme-icon sun-icon"></i>
+          <i class="ri-moon-line theme-icon moon-icon"></i>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="btn btn-primary">Let's Talk!</a>
+      </div>
+
+      <!-- Mobile Controls -->
+      <div class="mobile-controls">
+        <!-- Theme Toggle for Mobile -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="ri-sun-line theme-icon sun-icon"></i>
+          <i class="ri-moon-line theme-icon moon-icon"></i>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+          <i class="ri-menu-line"></i>
+        </button>
       </div>
     </div>
-  </footer>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-    <i class="ri-arrow-up-line"></i>
-  </button>
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="mobile-menu">
+      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">
+        <i class="ri-close-line"></i>
+      </button>
 
-  <!-- Project Modal #1 -->
-  <div class="modal" id="project1">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('project1')">&times;</span>
-      <div class="modal-header">
-        <h2>E-commerce Platform</h2>
-        <div class="modal-tech">
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">MongoDB</span>
-          <span class="tech-tag">Stripe</span>
+      <nav class="mobile-nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+
+        <!-- Mobile CTA -->
+        <a href="#contact" class="btn btn-primary mobile-cta">Let's Talk!</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+            <h1 class="hero-title">
+              Hi, I'm <span class="text-primary">Brandon Torres</span>
+            </h1>
+            <p class="hero-subtitle">
+              Lorem ipsum dolor sit amet.
+            </p>
+            <div class="hero-buttons">
+              <a href="#portfolio" class="btn btn-primary">View My Work</a>
+              <a href="#contact" class="btn btn-primary">Let's Talk!</a>
+            </div>
+          </div>
+
+          
         </div>
       </div>
-      <div class="modal-body">
-        <img src="/placeholder.svg?height=300&width=600" alt="E-commerce Platform Screenshot" loading="lazy">
-        <div class="modal-description">
-          <h3>Project Overview</h3>
-          <p>A comprehensive e-commerce platform built for a growing retail business. The platform features a modern,
-            responsive design with advanced filtering, secure payment processing, and an intuitive admin dashboard.</p>
+    </section>
+  </main>
 
-          <h3>Key Features</h3>
-          <ul>
-            <li>Responsive design optimized for all devices</li>
-            <li>Advanced product filtering and search</li>
-            <li>Secure payment integration with Stripe</li>
-            <li>Real-time inventory management</li>
-            <li>Customer reviews and ratings system</li>
-            <li>Admin dashboard with analytics</li>
-          </ul>
 
-          <h3>Challenges & Solutions</h3>
-          <p>The main challenge was implementing a scalable architecture that could handle high traffic during peak
-            shopping seasons. I solved this by implementing efficient caching strategies and optimizing database
-            queries.</p>
 
-          <div class="modal-links">
-            <a href="#" class="btn btn-primary">Live Demo</a>
-            <a href="#" class="btn btn-secondary">View Code</a>
+  <!-- Clients Section -->
+  <section id="clients" class="clients-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Trusted By</h2>
+
+      <div class="logos-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="logos-track">
+          <!-- First set of logos -->
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client1" alt="Client 1" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client2" alt="Client 2" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client3" alt="Client 3" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client4" alt="Client 4" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client5" alt="Client 5" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client6" alt="Client 6" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client7" alt="Client 7" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client8" alt="Client 8" class="client-logo">
+          </div>
+
+          <!-- Duplicate logos for infinite scrolling effect -->
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client1" alt="Client 1" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client2" alt="Client 2" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client3" alt="Client 3" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client4" alt="Client 4" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client5" alt="Client 5" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client6" alt="Client 6" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client7" alt="Client 7" class="client-logo">
+          </div>
+          <div class="logo-item">
+            <img src="https://via.placeholder.com/150x80?text=Client8" alt="Client 8" class="client-logo">
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Project Modal #2 -->
-  <div class="modal" id="project2">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('project2')">&times;</span>
-      <div class="modal-header">
-        <h2>Task Management App</h2>
-        <div class="modal-tech">
-          <span class="tech-tag">Vue.js</span>
-          <span class="tech-tag">Firebase</span>
-          <span class="tech-tag">PWA</span>
-          <span class="tech-tag">Vuex</span>
-        </div>
-      </div>
-      <div class="modal-body">
-        <img src="/placeholder.svg?height=300&width=600" alt="Task Management App Screenshot" loading="lazy">
-        <div class="modal-description">
-          <h3>Project Overview</h3>
-          <p>A collaborative task management application designed for remote teams. Built as a Progressive Web App with
-            real-time synchronization and offline capabilities.</p>
+  </section>
 
-          <h3>Key Features</h3>
-          <ul>
-            <li>Real-time collaboration with multiple users</li>
-            <li>Drag-and-drop task organization</li>
-            <li>Offline functionality with data sync</li>
-            <li>Team chat and file sharing</li>
-            <li>Time tracking and reporting</li>
-            <li>Mobile-first responsive design</li>
-          </ul>
+  <!-- Testimonial Section -->
 
-          <h3>Challenges & Solutions</h3>
-          <p>Implementing real-time collaboration while maintaining performance was challenging. I used Firebase's
-            real-time database with optimistic updates and conflict resolution to ensure smooth user experience.</p>
 
-          <div class="modal-links">
-            <a href="#" class="btn btn-primary">Live Demo</a>
-            <a href="#" class="btn btn-secondary">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Project Modal #3 -->
-  <div class="modal" id="project3">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('project3')">&times;</span>
-      <div class="modal-header">
-        <h2>Creative Portfolio</h2>
-        <div class="modal-tech">
-          <span class="tech-tag">HTML/CSS</span>
-          <span class="tech-tag">GSAP</span>
-          <span class="tech-tag">Three.js</span>
-          <span class="tech-tag">WebGL</span>
-        </div>
-      </div>
-      <div class="modal-body">
-        <img src="/placeholder.svg?height=300&width=600" alt="Creative Portfolio Screenshot" loading="lazy">
-        <div class="modal-description">
-          <h3>Project Overview</h3>
-          <p>An immersive portfolio website for a digital artist featuring 3D galleries, interactive animations, and a
-            unique storytelling approach to showcase creative work.</p>
 
-          <h3>Key Features</h3>
-          <ul>
-            <li>3D interactive galleries with Three.js</li>
-            <li>Smooth scroll animations with GSAP</li>
-            <li>Parallax effects and micro-interactions</li>
-            <li>Optimized performance for complex animations</li>
-            <li>Custom cursor and hover effects</li>
-            <li>Mobile-optimized touch interactions</li>
-          </ul>
 
-          <h3>Challenges & Solutions</h3>
-          <p>Balancing visual impact with performance was crucial. I implemented lazy loading for 3D models, optimized
-            textures, and used intersection observers to trigger animations only when needed.</p>
 
-          <div class="modal-links">
-            <a href="#" class="btn btn-primary">Live Demo</a>
-            <a href="#" class="btn btn-secondary">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/script.js"></script>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
