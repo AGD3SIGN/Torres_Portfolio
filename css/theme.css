@@ -1,0 +1,68 @@
+:root[data-theme="light"] {
+    --text: #1f1f1f;
+    --background: #f0edeb;
+    --primary: #05acff;
+    --secondary: #6bd0ff;
+    --accent: #ac2311;
+    --header-bg: rgba(240, 237, 235, 0.9);
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --input-bg: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+:root[data-theme="dark"] {
+    --text: #e0e0e0;
+    --background: #14110f;
+    --primary: #00a7fa;
+    --secondary: #006594;
+    --accent: #ee6553;
+    --header-bg: rgba(20, 17, 15, 0.9);
+    --card-bg: #1e1a17;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --input-bg: #2a2520;
+    --border-color: #3a3531;
+}
+
+/* Theme transition */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme toggle icons */
+.theme-toggle__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle__icon i {
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+:root[data-theme="light"] .light-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+:root[data-theme="light"] .dark-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+:root[data-theme="dark"] .light-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+:root[data-theme="dark"] .dark-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
