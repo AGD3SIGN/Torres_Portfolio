@@ -455,3 +455,28 @@ About Section
     font-size: 1.2rem;
     color: var(--primary);
 }
+
+/* ==================== 
+Skills Section
+====================*/
+.skills__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.skill__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill__name {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.skill__percentage {
+    font-weight: 600;
+    color: var(--accent);
+}
