@@ -556,6 +556,11 @@ Projects Section
     margin-bottom: 1.5rem;
 }
 
+.project-cards__tags span {
+    background-color: var(--primary);
+    color: var(--text);
+}
+
 .tag {
     padding: 0.3rem 0.8rem;
     background-color: var(--background);
@@ -610,5 +615,66 @@ Projects Section
     overflow-y: auto;
     transform: translateY(-50px);
     transition: transform 0.3s ease;
+}
+
+.modal.active .modal__content {
+    transform: translateY(0);
+}
+
+.modal__header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal__header h2 {
+    margin-bottom: 0;
+}
+
+.modal__close {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+
+.modal__close:hover {
+    color: var(--primary);
+}
+
+.modal__body {
+    padding: 1.5rem;
+}
+
+.modal__image {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.modal__details h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.modal__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.modal__tags span{
+    background-color: var(--primary);
+    color: var(--text);
+}
+
+.modal__links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
