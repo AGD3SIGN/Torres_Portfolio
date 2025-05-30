@@ -3,8 +3,8 @@
     --background: #f0edeb;
     --primary: #05acff;
     --secondary: #6bd0ff;
-    --accent: #ee6553;
-    --header-bg: rgba(240, 237, 235, 0.9);
+    --accent: #ac2311;
+    --header-bg: rgba(240, 237, 235, 0.95);
     --card-bg: #ffffff;
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     --input-bg: #ffffff;
@@ -17,9 +17,9 @@
     --primary: #00a7fa;
     --secondary: #006594;
     --accent: #ee6553;
-    --header-bg: rgba(20, 17, 15, 0.9);
+    --header-bg: rgba(20, 17, 15, 0.95);
     --card-bg: #1e1a17;
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     --input-bg: #2a2520;
     --border-color: #3a3531;
 }

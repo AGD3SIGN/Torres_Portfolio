@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Typewriter effect
 function initTypewriterEffect() {
     const typewriterElement = document.getElementById("typewriter")
-    const words = ["websites.", "experiences.", "solutions.", "expectations."]
+    const words = ["websites.", "experiences.", "solutions.", "interfaces."]
     let wordIndex = 0
     let charIndex = 0
     let isDeleting = false
@@ -53,28 +53,34 @@ function initTypewriterEffect() {
 
 // Interactive element in hero section
 function initInteractiveElement() {
-    const interactiveElement = document.getElementById('interactiveElement');
+    const heroBlob = document.getElementById("heroBlob")
+    const floatingElements = document.querySelectorAll(".floating-element")
 
-    // Create canvas for the interactive element
-    const canvas = document.createElement('canvas');
-    canvas.width = interactiveElement.offsetWidth;
-    canvas.height = interactiveElement.offsetHeight;
-    interactiveElement.appendChild(canvas);
+    // Mouse tracking for blob
+    document.addEventListener("mousemove", (e) => {
+        if (heroBlob) {
+            const rect = heroBlob.getBoundingClientRect()
+            const x = e.clientX - rect.left - rect.width / 2
+            const y = e.clientY - rect.top - rect.height / 2
 
-    const ctx = canvas.getContext('2d');
+            heroBlob.style.transform = `translate(calc(-50% + ${x * 0.1}px), calc(-50% + ${y * 0.1}px))`
+        }
+    })
 
-    // Create particles
-    const particles = [];
-    const particleCount = 100;
+    // Add hover effects to floating elements
+    floatingElements.forEach((element, index) => {
+        element.addEventListener("mouseenter", () => {
+            element.style.transform = "translateY(-20px) scale(1.1)"
+            element.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.2)"
+        })
 
-    for (let i = 0; i < particleCount; i++) {
-        particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: Math.random() * 3 + 1,
-            color: getComputedStyle(document.documentElement).getPropertyValue('--primary'),
-            speedX: Math.random() * 2 - 1,
-            speedY: Math.random() * 2 - 1
-        });
-    }
+        element.addEventListener("mouseleave", () => {
+            element.style.transform = "translateY(-20px) scale(1)"
+            element.style.boxShadow = "var(--card-shadow)"
+        })
+    })
+}
+
+function initScrollAnimations() {
+    // Add scroll triggered animations here
 }

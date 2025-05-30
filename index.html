@@ -28,19 +28,37 @@
   <header class="header">
     <div class="container">
       <div class="header__inner">
-        <a href="#" class="logo">Torres<span>Folio.</span></a>
-        <div class="theme-toggle" id="themeToggle">
-          <div class="theme-toggle__icon light-icon">
-            <i class="ri-sun-line"></i>
+        <a href="#" class="logo">Jane<span>Doe</span></a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <ul class="desktop-nav__menu">
+            <li><a href="#hero" class="desktop-nav__link">Home</a></li>
+            <li><a href="#about" class="desktop-nav__link">About</a></li>
+            <li><a href="#projects" class="desktop-nav__link">Projects</a></li>
+            <li><a href="#testimonials" class="desktop-nav__link">Testimonials</a></li>
+            <li><a href="#resume" class="desktop-nav__link">Resume</a></li>
+            <li><a href="#contact" class="desktop-nav__link">Contact</a></li>
+          </ul>
+          <div class="desktop-nav__cta">
+            <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
           </div>
-          <div class="theme-toggle__icon dark-icon">
-            <i class="ri-moon-line"></i>
+        </nav>
+
+        <div class="header__controls">
+          <div class="theme-toggle" id="themeToggle">
+            <div class="theme-toggle__icon light-icon">
+              <i class="ri-sun-line"></i>
+            </div>
+            <div class="theme-toggle__icon dark-icon">
+              <i class="ri-moon-line"></i>
+            </div>
           </div>
-        </div>
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -79,7 +97,7 @@
           <div class="hero__content">
             <h1 class="hero__title">
               <span class="greeting">Hello, I'm</span>
-              <span class="name">Brandon Torres</span>
+              <span class="name">Jane Doe</span>
               <span class="profession">I build <span id="typewriter"></span></span>
             </h1>
             <p class="hero__description">
@@ -92,7 +110,48 @@
             </div>
           </div>
           <div class="hero__visual">
-            <div class="interactive-element" id="interactiveElement"></div>
+            <div class="bento-grid">
+              <div class="bento-item bento-large">
+                <img src="https://via.placeholder.com/400x300/05acff/ffffff?text=E-commerce+Platform"
+                  alt="E-commerce Project" loading="lazy">
+                <div class="bento-overlay">
+                  <h4>E-commerce Platform</h4>
+                  <p>React & Node.js</p>
+                </div>
+              </div>
+              <div class="bento-item bento-tall">
+                <img src="https://via.placeholder.com/200x400/6bd0ff/ffffff?text=Mobile+App+UI" alt="Mobile App Project"
+                  loading="lazy">
+                <div class="bento-overlay">
+                  <h4>Mobile App UI</h4>
+                  <p>React Native</p>
+                </div>
+              </div>
+              <div class="bento-item bento-wide">
+                <img src="https://via.placeholder.com/300x150/00a7fa/ffffff?text=Dashboard+Analytics"
+                  alt="Dashboard Project" loading="lazy">
+                <div class="bento-overlay">
+                  <h4>Analytics Dashboard</h4>
+                  <p>Vue.js & D3.js</p>
+                </div>
+              </div>
+              <div class="bento-item bento-square">
+                <img src="https://via.placeholder.com/200x200/ac2311/ffffff?text=Portfolio+Site" alt="Portfolio Project"
+                  loading="lazy">
+                <div class="bento-overlay">
+                  <h4>Portfolio Website</h4>
+                  <p>HTML & CSS</p>
+                </div>
+              </div>
+              <div class="bento-item bento-medium">
+                <img src="https://via.placeholder.com/250x200/ee6553/ffffff?text=Restaurant+Website"
+                  alt="Restaurant Project" loading="lazy">
+                <div class="bento-overlay">
+                  <h4>Restaurant Site</h4>
+                  <p>WordPress</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -125,11 +184,11 @@
             <div class="about__details">
               <div class="about__detail">
                 <i class="ri-map-pin-line"></i>
-                <span>Saline County, AR</span>
+                <span>San Francisco, CA</span>
               </div>
               <div class="about__detail">
                 <i class="ri-mail-line"></i>
-                <span>brandon.agdesign@gmail.com</span>
+                <span>hello@janedoe.com</span>
               </div>
               <div class="about__detail">
                 <i class="ri-briefcase-line"></i>
@@ -705,12 +764,14 @@
               </div>
             </div>
             <div class="contact__social">
-              <h3>Connect With Me</h3>
-              <div class="social-icons">
-                <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
-                <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-                <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
-                <a href="#" class="social-icon"><i class="ri-dribbble-line"></i></a>
+              <div class="contact__social-content">
+                <h3>Connect With Me</h3>
+                <div class="social-icons">
+                  <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
+                  <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+                  <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
+                  <a href="#" class="social-icon"><i class="ri-dribbble-line"></i></a>
+                </div>
               </div>
             </div>
           </div>
