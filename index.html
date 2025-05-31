@@ -4,816 +4,409 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandon Torres - Freelance Web Developer</title>
+  <title>John Smith - Web Developer Portfolio</title>
   <meta name="description"
-    content="Freelance web developer specializing in modern, responsive websites and web applications.">
-  <!-- Remixicons -->
+    content="Professional web developer specializing in modern, responsive websites and applications">
+
+  <!-- Remix Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-  <!-- Google Fonts -->
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <!-- CSS Stylesheets -->
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
-  <!-- Progress bar -->
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
+  <!-- Loading Animation -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
   </div>
 
-  <!-- Header -->
-  <header class="header">
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">Torres<span class="logo-color">Folio.</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button class="theme-toggle" id="themeToggle">
+          <i class="ri-sun-line" id="themeIcon"></i>
+          <i class="ri-moon-line theme-icon" id="moonIcon"></i>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#testimonials" class="nav-link">Testimonials</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
     <div class="container">
-      <div class="header__inner">
-        <a href="#" class="logo">Torres<span>Folio.</span></a>
-
-        <!-- Desktop Navigation -->
-        <nav class="desktop-nav">
-          <ul class="desktop-nav__menu">
-            <li><a href="#hero" class="desktop-nav__link">Home</a></li>
-            <li><a href="#about" class="desktop-nav__link">About</a></li>
-            <li><a href="#projects" class="desktop-nav__link">Projects</a></li>
-            <li><a href="#testimonials" class="desktop-nav__link">Testimonials</a></li>
-            <li><a href="#resume" class="desktop-nav__link">Resume</a></li>
-            <li><a href="#contact" class="desktop-nav__link">Contact</a></li>
-          </ul>
-          <div class="desktop-nav__cta">
-            <a href="#contact" class="btn btn-primary btn-sm">Let's Talk!</a>
+      <div class="hero-content" data-aos="fade-up">
+        <div class="hero-text">
+          <h1 class="typewriter">Professional Web Development Solutions</h1>
+          <p>Crafting modern, responsive websites and applications that drive business growth and deliver exceptional
+            user experiences.</p>
+          <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="ri-eye-line"></i>
+              View My Work
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="ri-mail-line"></i>
+              Get In Touch
+            </a>
           </div>
-        </nav>
-
-        <div class="header__controls">
-          <div class="theme-toggle" id="themeToggle">
-            <div class="theme-toggle__icon light-icon">
-              <i class="ri-sun-line"></i>
-            </div>
-            <div class="theme-toggle__icon dark-icon">
-              <i class="ri-moon-line"></i>
-            </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card" data-aos="fade-left" data-aos-delay="200">
+            <i class="ri-code-s-slash-line"></i>
+            <h3>Frontend</h3>
+            <p>React, Vue, Angular</p>
           </div>
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="hero-card" data-aos="fade-left" data-aos-delay="400">
+            <i class="ri-server-line"></i>
+            <h3>Backend</h3>
+            <p>Node.js, Python, PHP</p>
+          </div>
+          <div class="hero-card stats-card" data-aos="fade-left" data-aos-delay="600">
+            <div class="stats-number" data-count="150">0</div>
+            <p>Projects Completed Successfully</p>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav__inner">
-      <nav class="mobile-nav__menu">
-        <ul>
-          <li><a href="#hero" class="mobile-nav__link">Home</a></li>
-          <li><a href="#about" class="mobile-nav__link">About</a></li>
-          <li><a href="#projects" class="mobile-nav__link">Projects</a></li>
-          <li><a href="#testimonials" class="mobile-nav__link">Testimonials</a></li>
-          <li><a href="#resume" class="mobile-nav__link">Resume</a></li>
-          <li><a href="#contact" class="mobile-nav__link">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="mobile-nav__footer">
-        <div class="social-icons">
-          <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
-          <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-          <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
-          <a href="#" class="social-icon"><i class="ri-dribbble-line"></i></a>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image" data-aos="fade-right">
+          <img src="images/about.jpg" alt="John Smith - Web Developer" loading="lazy">
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <div class="container">
-        <div class="hero__inner">
-          <div class="hero__content">
-            <h1 class="hero__title">
-              <span class="greeting">Hello, I'm</span>
-              <span class="name">Brandon Torres</span>
-              <span class="profession">I build <span id="typewriter"></span></span>
-            </h1>
-            <p class="hero__description">
-              Freelance web developer specializing in creating beautiful,
-              functional, and responsive websites that help businesses grow.
-            </p>
-            <div class="hero__cta">
-              <a href="#projects" class="btn btn-primary">View My Work</a>
-              <a href="#contact" class="btn btn-outline">Contact Me</a>
+        <div class="about-text" data-aos="fade-left">
+          <h2>Who Am I?</h2>
+          <p>Hi! I'm John Smith. I'm here to add your own taste and tell me. I'm an experienced web developer with over
+            5 years of experience creating digital solutions that make a difference.</p>
+          <p>I specialize in building modern, responsive websites and applications using the latest technologies. My
+            passion lies in creating user-friendly interfaces that not only look great but also provide exceptional
+            functionality.</p>
+          <div class="services-grid">
+            <div class="service-card">
+              <i class="ri-palette-line"></i>
+              <h4>Web Design</h4>
+              <p>Modern UI/UX</p>
             </div>
-          </div>
-          <div class="hero__visual">
-            <div class="bento-grid">
-              <div class="bento-item bento-large">
-                <img src="images/forest.jpg" alt="E-commerce Project" loading="lazy">
-                <div class="bento-overlay">
-                  <h4>E-commerce Platform</h4>
-                  <p>React & Node.js</p>
-                </div>
-              </div>
-              <div class="bento-item bento-tall">
-                <img src="images/landscape.jpg" alt="Mobile App Project" loading="lazy">
-                <div class="bento-overlay">
-                  <h4>Mobile App UI</h4>
-                  <p>React Native</p>
-                </div>
-              </div>
-              <div class="bento-item bento-wide">
-                <img src="images/forest.jpg" alt="Dashboard Project" loading="lazy">
-                <div class="bento-overlay">
-                  <h4>Analytics Dashboard</h4>
-                  <p>Vue.js & D3.js</p>
-                </div>
-              </div>
-              <div class="bento-item bento-square">
-                <img src="images/landscape.jpg" alt="Portfolio Project" loading="lazy">
-                <div class="bento-overlay">
-                  <h4>Portfolio Website</h4>
-                  <p>HTML & CSS</p>
-                </div>
-              </div>
-              <div class="bento-item bento-medium">
-                <img src="images/forest.jpg" alt="Restaurant Project" loading="lazy">
-                <div class="bento-overlay">
-                  <h4>Restaurant Site</h4>
-                  <p>WordPress</p>
-                </div>
-              </div>
+            <div class="service-card">
+              <i class="ri-code-line"></i>
+              <h4>Development</h4>
+              <p>Full-Stack Solutions</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">About Me</h2>
-          <div class="section-line"></div>
-        </div>
-        <div class="about__inner">
-          <div class="about__image">
-            <div class="about__image-container">
-              <img src="images/about.jpg" alt="Brandon Torres" loading="lazy">
+            <div class="service-card">
+              <i class="ri-smartphone-line"></i>
+              <h4>Mobile Apps</h4>
+              <p>Cross-Platform</p>
             </div>
-          </div>
-          <div class="about__content">
-            <h3>Crafting Digital Experiences</h3>
-            <p>
-              With over 5 years of experience in web development, I specialize in creating
-              responsive, user-friendly websites that deliver exceptional user experiences.
-            </p>
-            <p>
-              My approach combines clean code, modern design principles, and performance
-              optimization to build websites that not only look great but also perform
-              exceptionally well across all devices.
-            </p>
-            <div class="about__details">
-              <div class="about__detail">
-                <i class="ri-map-pin-line"></i>
-                <span>Central Arkansas</span>
-              </div>
-              <div class="about__detail">
-                <i class="ri-mail-line"></i>
-                <span>brandon.agdesign@gmail.com</span>
-              </div>
-              <div class="about__detail">
-                <i class="ri-briefcase-line"></i>
-                <span>Available for freelance</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">My Skills</h2>
-          <div class="section-line"></div>
-        </div>
-        <div class="skills__inner">
-          <!-- HTML / CSS -->
-          <div class="skill">
-            <div class="skill__info">
-              <h3 class="skill__name">HTML & CSS</h3>
-              <span class="skill__percentage">95%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__progress" data-width="95"></div>
-            </div>
-          </div>
-          <!-- Javascript -->
-          <div class="skill">
-            <div class="skill__info">
-              <h3 class="skill__name">JavaScript</h3>
-              <span class="skill__percentage">70%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__progress" data-width="70"></div>
-            </div>
-          </div>
-          <!-- React -->
-          <!-- <div class="skill">
-            <div class="skill__info">
-              <h3 class="skill__name">React</h3>
-              <span class="skill__percentage">85%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__progress" data-width="85"></div>
-            </div>
-          </div> -->
-
-          <!-- Node JS -->
-          <!-- <div class="skill">
-            <div class="skill__info">
-              <h3 class="skill__name">Node.js</h3>
-              <span class="skill__percentage">80%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__progress" data-width="80"></div>
-            </div>
-          </div> -->
-          <!-- UI/UX Design -->
-          <div class="skill">
-            <div class="skill__info">
-              <h3 class="skill__name">UI/UX Design</h3>
-              <span class="skill__percentage">75%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__progress" data-width="75"></div>
-            </div>
-          </div>
-          <!-- WordPress -->
-          <div class="skill">
-            <div class="skill__info">
-              <h3 class="skill__name">WordPress</h3>
-              <span class="skill__percentage">85%</span>
-            </div>
-            <div class="skill__bar">
-              <div class="skill__progress" data-width="85"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">My Projects</h2>
-          <div class="section-line"></div>
-        </div>
-        <div class="projects__inner">
-          <!-- Project 1 -->
-          <div class="project-card" data-project="project1">
-            <div class="project-card__image">
-              <img src="images/projects/businessCard_mockup.png" alt="TNT Lawncare Business card" loading="lazy">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Business Card</h3>
-              <p class="project-card__description">
-                A fully responsive e-commerce platform with product filtering and cart functionality.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">Adobe Firefly</span>
-                <span class="tag">Adobe Illustrator</span>
-              </div>
-              <button class="project-card__btn">View Case Study</button>
-            </div>
-          </div>
-          <!-- Project 2 -->
-          <!-- <div class="project-card" data-project="project2">
-            <div class="project-card__image">
-              <img src="images/landscape.jpg" alt="Portfolio Website" loading="lazy">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Portfolio Website</h3>
-              <p class="project-card__description">
-                A minimalist portfolio website for a photographer with gallery functionality.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-              </div>
-              <button class="project-card__btn">View Case Study</button>
-            </div>
-          </div> -->
-          <!-- Project 3 -->
-          <!-- <div class="project-card" data-project="project3">
-            <div class="project-card__image">
-              <img src="images/forest.jpg" alt="SaaS Dashboard" loading="lazy">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">SaaS Dashboard</h3>
-              <p class="project-card__description">
-                An interactive dashboard for a SaaS application with data visualization.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Chart.js</span>
-              </div>
-              <button class="project-card__btn">View Case Study</button>
-            </div>
-          </div> -->
-          <!-- Project 4 -->
-          <!-- <div class="project-card" data-project="project4">
-            <div class="project-card__image">
-              <img src="images/landscape.jpg" alt="Restaurant Website" loading="lazy">
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Restaurant Website</h3>
-              <p class="project-card__description">
-                A responsive website for a local restaurant with online reservation system.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">PHP</span>
-              </div>
-              <button class="project-card__btn">View Case Study</button>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </section>
-
-    <!-- When adding a new project name the 'id' to project *NUMBER* Modal-->
-    <!-- Project Modal #1 TNT Business Cards -->
-    <div class="modal" id="project1Modal">
-      <div class="modal__content">
-        <div class="modal__header">
-          <h2>TNT Lawns BC</h2>
-          <span class="modal__close">&times;</span>
-        </div>
-        <div class="modal__body">
-          <div class="modal__image">
-            <img src="images/projects/businessCard_mockup.png" alt="Business Card for TNT Lawns" loading="lazy">
-          </div>
-          <div class="modal__details">
-            <div class="modal__info">
-              <h3>Project Overview</h3>
-              <p>
-                Our oldest decided to start his lawn care business back in 2023. Since then, he has grown and developed with gaining yards and experience. It was time for some branding.
-              </p>
-              <h3>Challenge</h3>
-              <p>
-                The biggest obstacle was developing the logo. Trying to find something that fit his personality and work environment. With the help of a few AI generative tools, we have come up with an idea that we liked. I then took the idea into Illustrator and created the logo you see today.
-              </p>
-              <h3>Solution</h3>
-              <p>
-                With his initials being 'TNT' and career in lawncare, I was able to take the initials and a leaf and formed them together. I believe the leaf acts as the 'fuse' for the initials, making it an expolosive logo. We were then able to come up with the slogan 'Lawn Care with a Bang!'.
-              </p>
-              <h3>Technologies Used</h3>
-              <div class="modal__tags">
-                <span class="tag">Adobe Firefly</span>
-                <span class="tag">Illustrator</span>
-              </div>
-              <h3>Results</h3>
-              <p>
-                One happy kiddo on his career journey in lawncare!
-              </p>
-              <div class="modal__links">
-                <a href="http://www.tnt-lawns.com" class="btn btn-outline">
-                  <i class="ri-external-link-line"></i> Live Site
-                </a>
-                <!-- <a href="#" class="btn btn-outline">
-                  <i class="ri-github-line"></i> GitHub
-                </a> -->
-              </div>
+            <div class="service-card">
+              <i class="ri-search-eye-line"></i>
+              <h4>SEO</h4>
+              <p>Search Optimization</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Project Modal #2 -->
-    <!-- <div class="modal" id="project2Modal">
-      <div class="modal__content">
-        <div class="modal__header">
-          <h2>E-commerce Website</h2>
-          <span class="modal__close">&times;</span>
-        </div>
-        <div class="modal__body">
-          <div class="modal__image">
-            <img src="images/forest.jpg" alt="E-commerce Website" loading="lazy">
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <h2>Technical Skills</h2>
+        <p>Technologies and tools I work with to bring ideas to life</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-header">
+            <span class="skill-name">HTML/CSS</span>
+            <span class="skill-percentage">95%</span>
           </div>
-          <div class="modal__details">
-            <div class="modal__info">
-              <h3>Project Overview</h3>
-              <p>
-                A fully responsive e-commerce platform built for a fashion retailer.
-                The website features product filtering, cart functionality, and a
-                seamless checkout process.
-              </p>
-              <h3>Challenge</h3>
-              <p>
-                The client needed a modern e-commerce solution that would provide
-                an excellent user experience across all devices while maintaining
-                fast loading times despite having a large product catalog.
-              </p>
-              <h3>Solution</h3>
-              <p>
-                I implemented a responsive design with optimized images and lazy loading
-                to ensure fast performance. The product filtering system was built with
-                vanilla JavaScript for maximum efficiency, and the cart system uses
-                local storage to persist user selections.
-              </p>
-              <h3>Technologies Used</h3>
-              <div class="modal__tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-              </div>
-              <h3>Results</h3>
-              <p>
-                The website achieved a 40% increase in mobile conversions and a 25%
-                reduction in bounce rate compared to the client's previous site.
-              </p>
-              <div class="modal__links">
-                <a href="#" class="btn btn-outline">
-                  <i class="ri-external-link-line"></i> Live Site
-                </a>
-                <a href="#" class="btn btn-outline">
-                  <i class="ri-github-line"></i> GitHub
-                </a>
-              </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="95"></div>
+          </div>
+        </div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-header">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-percentage">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90"></div>
+          </div>
+        </div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-header">
+            <span class="skill-name">React</span>
+            <span class="skill-percentage">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85"></div>
+          </div>
+        </div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-header">
+            <span class="skill-name">Node.js</span>
+            <span class="skill-percentage">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="80"></div>
+          </div>
+        </div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="skill-header">
+            <span class="skill-name">Python</span>
+            <span class="skill-percentage">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="75"></div>
+          </div>
+        </div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="600">
+          <div class="skill-header">
+            <span class="skill-name">Database</span>
+            <span class="skill-percentage">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h2>Achievements & Impact</h2>
+        <p>Numbers that reflect my commitment to excellence</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-number" data-count="150">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-number" data-count="98">0</div>
+          <div class="stat-label">Client Satisfaction %</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-number" data-count="5">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-number" data-count="24">0</div>
+          <div class="stat-label">Support Hours</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <h2>Featured Projects</h2>
+        <p>A showcase of my recent work and achievements</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal('project1')">
+          <div class="project-image">
+            <i class="ri-shopping-cart-line"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-description">A full-featured online store with payment integration, inventory management,
+              and admin dashboard.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Stripe</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal('project2')">
+          <div class="project-image">
+            <i class="ri-dashboard-line"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Analytics Dashboard</h3>
+            <p class="project-description">Real-time data visualization dashboard with interactive charts and reporting
+              features.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">D3.js</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal('project3')">
+          <div class="project-image">
+            <i class="ri-smartphone-line"></i>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Mobile App</h3>
+            <p class="project-description">Cross-platform mobile application with offline capabilities and push
+              notifications.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Redux</span>
+              <span class="tech-tag">TypeScript</span>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
+  </section>
 
-    <!-- Project Modal #3 -->
-    <!-- <div class="modal" id="project3Modal">
-      <div class="modal__content">
-        <div class="modal__header">
-          <h2>E-commerce Website</h2>
-          <span class="modal__close">&times;</span>
-        </div>
-        <div class="modal__body">
-          <div class="modal__image">
-            <img src="images/forest.jpg" alt="E-commerce Website" loading="lazy">
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <h2>Client Testimonials</h2>
+        <p>What my clients say about working with me</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <p class="testimonial-text">"John delivered an exceptional e-commerce platform that exceeded our expectations.
+            The attention to detail and user experience is outstanding."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div class="author-info">
+              <h4>Sarah Mitchell</h4>
+              <p class="author-role">CEO, TechStart</p>
+            </div>
           </div>
-          <div class="modal__details">
-            <div class="modal__info">
-              <h3>Project Overview</h3>
-              <p>
-                A fully responsive e-commerce platform built for a fashion retailer.
-                The website features product filtering, cart functionality, and a
-                seamless checkout process.
-              </p>
-              <h3>Challenge</h3>
-              <p>
-                The client needed a modern e-commerce solution that would provide
-                an excellent user experience across all devices while maintaining
-                fast loading times despite having a large product catalog.
-              </p>
-              <h3>Solution</h3>
-              <p>
-                I implemented a responsive design with optimized images and lazy loading
-                to ensure fast performance. The product filtering system was built with
-                vanilla JavaScript for maximum efficiency, and the cart system uses
-                local storage to persist user selections.
-              </p>
-              <h3>Technologies Used</h3>
-              <div class="modal__tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-              </div>
-              <h3>Results</h3>
-              <p>
-                The website achieved a 40% increase in mobile conversions and a 25%
-                reduction in bounce rate compared to the client's previous site.
-              </p>
-              <div class="modal__links">
-                <a href="#" class="btn btn-outline">
-                  <i class="ri-external-link-line"></i> Live Site
-                </a>
-                <a href="#" class="btn btn-outline">
-                  <i class="ri-github-line"></i> GitHub
-                </a>
-              </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <p class="testimonial-text">"Professional, reliable, and incredibly skilled. John transformed our outdated
+            website into a modern, responsive platform that our customers love."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MJ</div>
+            <div class="author-info">
+              <h4>Michael Johnson</h4>
+              <p class="author-role">Marketing Director</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+          <p class="testimonial-text">"The mobile app John developed for us has been a game-changer. It's intuitive,
+            fast, and our users absolutely love it."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">EW</div>
+            <div class="author-info">
+              <h4>Emily Wilson</h4>
+              <p class="author-role">Product Manager</p>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
+  </section>
 
-    <!-- Project Modal #4 -->
-    <!-- <div class="modal" id="project4Modal">
-      <div class="modal__content">
-        <div class="modal__header">
-          <h2>E-commerce Website</h2>
-          <span class="modal__close">&times;</span>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-content" data-aos="fade-up">
+        <h2>Let's Work Together</h2>
+        <p>Ready to bring your ideas to life? Get in touch and let's discuss your next project.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="ri-phone-line"></i>
+            <h4>Phone</h4>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div class="contact-item">
+            <i class="ri-mail-line"></i>
+            <h4>Email</h4>
+            <p>john@example.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="ri-map-pin-line"></i>
+            <h4>Location</h4>
+            <p>New York, NY</p>
+          </div>
         </div>
-        <div class="modal__body">
-          <div class="modal__image">
-            <img src="images/forest.jpg" alt="E-commerce Website" loading="lazy">
-          </div>
-          <div class="modal__details">
-            <div class="modal__info">
-              <h3>Project Overview</h3>
-              <p>
-                A fully responsive e-commerce platform built for a fashion retailer.
-                The website features product filtering, cart functionality, and a
-                seamless checkout process.
-              </p>
-              <h3>Challenge</h3>
-              <p>
-                The client needed a modern e-commerce solution that would provide
-                an excellent user experience across all devices while maintaining
-                fast loading times despite having a large product catalog.
-              </p>
-              <h3>Solution</h3>
-              <p>
-                I implemented a responsive design with optimized images and lazy loading
-                to ensure fast performance. The product filtering system was built with
-                vanilla JavaScript for maximum efficiency, and the cart system uses
-                local storage to persist user selections.
-              </p>
-              <h3>Technologies Used</h3>
-              <div class="modal__tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-              </div>
-              <h3>Results</h3>
-              <p>
-                The website achieved a 40% increase in mobile conversions and a 25%
-                reduction in bounce rate compared to the client's previous site.
-              </p>
-              <div class="modal__links">
-                <a href="#" class="btn btn-outline">
-                  <i class="ri-external-link-line"></i> Live Site
-                </a>
-                <a href="#" class="btn btn-outline">
-                  <i class="ri-github-line"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="ri-github-line"></i></a>
+          <a href="#" class="social-link"><i class="ri-linkedin-line"></i></a>
+          <a href="#" class="social-link"><i class="ri-twitter-line"></i></a>
+          <a href="#" class="social-link"><i class="ri-dribbble-line"></i></a>
         </div>
       </div>
-    </div> -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials</h2>
-          <div class="section-line"></div>
-        </div>
-        <div class="testimonials__inner">
-          <div class="testimonials__slider" id="testimonialsSlider">
-            <div class="testimonial">
-              <div class="testimonial__content">
-                <i class="ri-double-quotes-l quote-icon"></i>
-                <p>
-                  Jane transformed our outdated website into a modern, user-friendly
-                  platform that perfectly represents our brand. Her attention to detail
-                  and technical expertise exceeded our expectations.
-                </p>
-              </div>
-              <div class="testimonial__author">
-                <div class="testimonial__author-image">
-                  <img src="https://via.placeholder.com/100" alt="Sarah Johnson" loading="lazy">
-                </div>
-                <div class="testimonial__author-info">
-                  <h4>Sarah Johnson</h4>
-                  <p>CEO, TechStart Inc.</p>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial">
-              <div class="testimonial__content">
-                <i class="ri-double-quotes-l quote-icon"></i>
-                <p>
-                  Working with Jane was a pleasure from start to finish. She took the
-                  time to understand our business needs and delivered a website that
-                  not only looks great but also performs exceptionally well.
-                </p>
-              </div>
-              <div class="testimonial__author">
-                <div class="testimonial__author-image">
-                  <img src="https://via.placeholder.com/100" alt="Michael Chen" loading="lazy">
-                </div>
-                <div class="testimonial__author-info">
-                  <h4>Michael Chen</h4>
-                  <p>Marketing Director, Fusion Media</p>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial">
-              <div class="testimonial__content">
-                <i class="ri-double-quotes-l quote-icon"></i>
-                <p>
-                  Jane's expertise in responsive design and performance optimization
-                  helped us achieve a significant increase in mobile conversions.
-                  She's a talented developer who delivers results.
-                </p>
-              </div>
-              <div class="testimonial__author">
-                <div class="testimonial__author-image">
-                  <img src="https://via.placeholder.com/100" alt="Emily Rodriguez" loading="lazy">
-                </div>
-                <div class="testimonial__author-info">
-                  <h4>Emily Rodriguez</h4>
-                  <p>Owner, Craft Boutique</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonials__controls">
-            <button class="testimonials__control prev" id="testimonialPrev">
-              <i class="ri-arrow-left-s-line"></i>
-            </button>
-            <button class="testimonials__control next" id="testimonialNext">
-              <i class="ri-arrow-right-s-line"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resume/Timeline Section -->
-    <section id="resume" class="resume">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">My Journey</h2>
-          <div class="section-line"></div>
-        </div>
-        <div class="resume__inner">
-          <div class="timeline">
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <span class="timeline__date">2021 - Present</span>
-                <h3 class="timeline__title">Freelance Web Developer</h3>
-                <p class="timeline__description">
-                  Working with clients across various industries to design and develop
-                  responsive websites and web applications that meet their business needs.
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <span class="timeline__date">2018 - 2021</span>
-                <h3 class="timeline__title">Senior Frontend Developer at TechCorp</h3>
-                <p class="timeline__description">
-                  Led the frontend development team in creating responsive web applications
-                  using modern JavaScript frameworks and CSS preprocessors.
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <span class="timeline__date">2016 - 2018</span>
-                <h3 class="timeline__title">Web Developer at Digital Agency</h3>
-                <p class="timeline__description">
-                  Developed websites and web applications for clients in various industries,
-                  focusing on responsive design and cross-browser compatibility.
-                </p>
-              </div>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__content">
-                <span class="timeline__date">2015</span>
-                <h3 class="timeline__title">BS in Computer Science</h3>
-                <p class="timeline__description">
-                  Graduated with honors from University of Technology with a focus on
-                  web development and user interface design.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get In Touch</h2>
-          <div class="section-line"></div>
-        </div>
-        <div class="contact__inner">
-          <div class="contact__info">
-            <div class="contact__item">
-              <div class="contact__icon">
-                <i class="ri-map-pin-line"></i>
-              </div>
-              <div class="contact__details">
-                <h3>Location</h3>
-                <p>San Francisco, CA</p>
-              </div>
-            </div>
-            <div class="contact__item">
-              <div class="contact__icon">
-                <i class="ri-mail-line"></i>
-              </div>
-              <div class="contact__details">
-                <h3>Email</h3>
-                <p>hello@janedoe.com</p>
-              </div>
-            </div>
-            <div class="contact__item">
-              <div class="contact__icon">
-                <i class="ri-phone-line"></i>
-              </div>
-              <div class="contact__details">
-                <h3>Phone</h3>
-                <p>(123) 456-7890</p>
-              </div>
-            </div>
-            <div class="contact__social">
-              <div class="contact__social-content">
-                <h3>Connect With Me</h3>
-                <div class="social-icons">
-                  <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
-                  <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-                  <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
-                  <a href="#" class="social-icon"><i class="ri-dribbble-line"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="contact__map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764017948553!3d37.75781499657919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1620931012660!5m2!1sen!2sus"
-              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__inner">
-        <div class="footer__logo">
-          <a href="#" class="logo">Jane<span>Doe</span></a>
-        </div>
-        <div class="footer__nav">
-          <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__social">
-          <div class="social-icons">
-            <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
-            <a href="#" class="social-icon"><i class="ri-linkedin-fill"></i></a>
-            <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
-            <a href="#" class="social-icon"><i class="ri-dribbble-line"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer__copyright">
-        <p>&copy; 2023 Jane Doe. All rights reserved.</p>
-      </div>
+      <p>&copy; 2024 John Smith. All rights reserved. Built with passion and code.</p>
     </div>
   </footer>
 
-  <!-- Scroll to top button -->
+  <!-- Scroll to Top Button -->
   <button class="scroll-top" id="scrollTop">
     <i class="ri-arrow-up-line"></i>
   </button>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <!-- Project Modal -->
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div id="modalContent">
+        <!-- Modal content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JavaScript -->
   <script src="js/main.js"></script>
-  <script src="js/animations.js"></script>
 </body>
 
 </html>
