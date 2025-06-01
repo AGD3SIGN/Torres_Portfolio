@@ -1,5 +1,6 @@
-// Initialize AOS
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
+    // Initialize AOS
     AOS.init({
         duration: 1000,
         once: true,
@@ -77,22 +78,29 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Typing Animation
-    const typingText = document.querySelector('.typing-text');
-    const text = 'Alex Johnson';
-    let index = 0;
+    // Rotating Text Animation
+    function initRotatingText() {
+        const words = document.querySelectorAll('.rotating-text .word');
+        let currentIndex = 0;
 
-    function typeWriter() {
-        if (index < text.length) {
-            typingText.textContent = text.slice(0, index + 1);
-            index++;
-            setTimeout(typeWriter, 150);
+        function rotateText() {
+            // Remove active class from all words
+            words.forEach(word => word.classList.remove('active'));
+
+            // Add active class to current word
+            words[currentIndex].classList.add('active');
+
+            // Move to next word
+            currentIndex = (currentIndex + 1) % words.length;
         }
+
+        // Start the rotation immediately
+        rotateText();
+        setInterval(rotateText, 2000); // Change word every 2 seconds
     }
 
-    // Start typing animation when page loads
-    typingText.textContent = '';
-    setTimeout(typeWriter, 1000);
+    // Initialize rotating text
+    initRotatingText();
 
     // Skill Progress Animation
     const skillBars = document.querySelectorAll('.skill-progress');
@@ -106,16 +114,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Trigger skill animation when skills section is in view
     const skillsSection = document.getElementById('skills');
-    const skillsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkills();
-                skillsObserver.unobserve(entry.target);
-            }
+    if (skillsSection) {
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkills();
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
         });
-    });
 
-    skillsObserver.observe(skillsSection);
+        skillsObserver.observe(skillsSection);
+    }
 
     // Counter Animation
     const counters = document.querySelectorAll('.stat-number');
@@ -142,16 +152,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Trigger counter animation when stats section is in view
     const statsSection = document.querySelector('.stats');
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                statsObserver.unobserve(entry.target);
-            }
+    if (statsSection) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
         });
-    });
 
-    statsObserver.observe(statsSection);
+        statsObserver.observe(statsSection);
+    }
 
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -200,29 +212,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // Parallax effect for hero section
     const hero = document.querySelector('.hero');
 
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
-    });
+    if (hero) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.1; // Reduced parallax effect for better performance
+            hero.style.transform = `translateY(${rate}px)`;
+        });
+    }
 
     // Performance optimization: Lazy loading for images
     const images = document.querySelectorAll('img[data-src]');
 
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
-            }
+    if (images.length > 0) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
+            });
         });
-    });
 
-    images.forEach(img => {
-        if (img.hasAttribute('data-src')) {
+        images.forEach(img => {
             imageObserver.observe(img);
-        }
-    });
+        });
+    }
 });
