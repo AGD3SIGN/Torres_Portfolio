@@ -4,7 +4,7 @@
     --background: #f0edeb;
     --primary: #05acff;
     --secondary: #6bd0ff;
-    --accent: #ac2311;
+    --accent: #ee6553;
     --card-bg: #ffffff;
     --border: #e0e0e0;
     --shadow: rgba(0, 0, 0, 0.1);
@@ -19,6 +19,16 @@
     --card-bg: #1f1c1a;
     --border: #333;
     --shadow: rgba(0, 0, 0, 0.3);
+}
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --accent: #3b82f6;
 }
 
 /* ==================== Reset and Base Styles ==================== */
@@ -116,21 +126,10 @@ p {
     margin: 0 auto;
 }
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --accent: #3b82f6;
 }
 
 body {
