@@ -1,242 +1,96 @@
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Initialize AOS
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
+// Typing animation with word cycling
+function typeWriter() {
+    const words = ['Websites', 'Experiences', 'Solutions', 'Interfaces', 'Applications'];
+    const typingElement = document.getElementById('typing-text');
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-    const themeIcon = themeToggle.querySelector('i');
+    function type() {
+        const currentWord = words[wordIndex];
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+        if (isDeleting) {
+            // Remove characters
+            typingElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-        themeIcon.className = theme === 'light' ? 'ri-moon-line' : 'ri-sun-line';
-    }
-
-    // Mobile Menu Toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking on links
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        });
-    });
-
-    // Progress Bar
-    const progressBar = document.querySelector('.progress-bar');
-
-    function updateProgressBar() {
-        const scrollTop = window.pageYOffset;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        progressBar.style.width = scrollPercent + '%';
-    }
-
-    window.addEventListener('scroll', updateProgressBar);
-
-    // Scroll to Top Button
-    const scrollTopBtn = document.getElementById('scrollTop');
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('visible');
+            if (charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(type, 500); // Pause before typing next word
+                return;
+            }
         } else {
-            scrollTopBtn.classList.remove('visible');
-        }
-    });
+            // Add characters
+            typingElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
 
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // Rotating Text Animation
-    function initRotatingText() {
-        const words = document.querySelectorAll('.rotating-text .word');
-        let currentIndex = 0;
-
-        function rotateText() {
-            // Remove active class from all words
-            words.forEach(word => word.classList.remove('active'));
-
-            // Add active class to current word
-            words[currentIndex].classList.add('active');
-
-            // Move to next word
-            currentIndex = (currentIndex + 1) % words.length;
+            if (charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(type, 2000); // Pause before deleting
+                return;
+            }
         }
 
-        // Start the rotation immediately
-        rotateText();
-        setInterval(rotateText, 2000); // Change word every 2 seconds
+        // Typing speed
+        const speed = isDeleting ? 50 : 100;
+        setTimeout(type, speed);
     }
 
-    // Initialize rotating text
-    initRotatingText();
+    type();
+}
 
-    // Skill Progress Animation
-    const skillBars = document.querySelectorAll('.skill-progress');
+// Start typing animation when page loads
+window.addEventListener('load', () => {
+    setTimeout(typeWriter, 1000);
+});
 
-    function animateSkills() {
-        skillBars.forEach(bar => {
-            const width = bar.getAttribute('data-width');
-            bar.style.width = width + '%';
-        });
+function toggleMobileNav() {
+    const mobileNav = document.getElementById('mobileNav');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+
+    mobileNav.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+
+    // Prevent body scroll when mobile nav is open
+    if (mobileNav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
     }
+}
 
-    // Trigger skill animation when skills section is in view
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) {
-        const skillsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkills();
-                    skillsObserver.unobserve(entry.target);
-                }
+function closeMobileNav() {
+    const mobileNav = document.getElementById('mobileNav');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+
+    mobileNav.classList.remove('active');
+    menuBtn.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close mobile nav when clicking outside
+document.addEventListener('click', (e) => {
+    const mobileNav = document.getElementById('mobileNav');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+
+    if (mobileNav.classList.contains('active') &&
+        !mobileNav.contains(e.target) &&
+        !menuBtn.contains(e.target)) {
+        closeMobileNav();
+    }
+});
+
+// Handle smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
-        });
-
-        skillsObserver.observe(skillsSection);
-    }
-
-    // Counter Animation
-    const counters = document.querySelectorAll('.stat-number');
-
-    function animateCounters() {
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-count'));
-            const increment = target / 100;
-            let current = 0;
-
-            const updateCounter = () => {
-                if (current < target) {
-                    current += increment;
-                    counter.textContent = Math.ceil(current);
-                    setTimeout(updateCounter, 20);
-                } else {
-                    counter.textContent = target;
-                }
-            };
-
-            updateCounter();
-        });
-    }
-
-    // Trigger counter animation when stats section is in view
-    const statsSection = document.querySelector('.stats');
-    if (statsSection) {
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        });
-
-        statsObserver.observe(statsSection);
-    }
-
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
+        }
     });
-
-    // Active navigation highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-menu a, .mobile-menu a');
-
-    function highlightActiveNav() {
-        const scrollPos = window.pageYOffset + 100;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href') === `#${sectionId}`) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-        });
-    }
-
-    window.addEventListener('scroll', highlightActiveNav);
-
-    // Parallax effect for hero section
-    const hero = document.querySelector('.hero');
-
-    if (hero) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.1; // Reduced parallax effect for better performance
-            hero.style.transform = `translateY(${rate}px)`;
-        });
-    }
-
-    // Performance optimization: Lazy loading for images
-    const images = document.querySelectorAll('img[data-src]');
-
-    if (images.length > 0) {
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-
-        images.forEach(img => {
-            imageObserver.observe(img);
-        });
-    }
 });
