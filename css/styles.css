@@ -283,12 +283,12 @@ body.dark .menu-btn span {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 320px;
+    width: 300px;
     height: 100vh;
     background: var(--bg-light);
     border-left: 1px solid var(--border-light);
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
+    z-index: 1001;
     padding: 100px 32px 32px;
     display: flex;
     flex-direction: column;
@@ -417,6 +417,262 @@ body.dark .mobile-nav-links a {
     visibility: visible;
 }
 
+/* Hero Section */
+.hero-section {
+    height: 100svh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+}
+
+.hero-content {
+    text-align: left;
+}
+
+.hero-subheader {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.typing-text {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.typing-text::after {
+    content: '|';
+    color: var(--primary-blue);
+    animation: blink 1s infinite;
+    font-weight: normal;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.hero-description {
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: none;
+}
+
+.cta-button.secondary:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Hero Animation */
+.hero-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+}
+
+.floating-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.card-1 {
+    top: 20%;
+    left: 10%;
+    width: 120px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    animation: float1 6s ease-in-out infinite;
+}
+
+.card-2 {
+    top: 10%;
+    right: 20%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 50%;
+    animation: float2 8s ease-in-out infinite;
+}
+
+.card-3 {
+    bottom: 30%;
+    left: 20%;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    animation: float3 7s ease-in-out infinite;
+}
+
+.card-4 {
+    bottom: 10%;
+    right: 15%;
+    width: 110px;
+    height: 70px;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    animation: float4 9s ease-in-out infinite;
+}
+
+.card-5 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    animation: pulse 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(-5deg);
+    }
+}
+
+@keyframes float3 {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(3deg);
+    }
+}
+
+@keyframes float4 {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-3deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        box-shadow: 0 0 0 20px rgba(37, 99, 235, 0);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .nav-wrapper {
@@ -459,6 +715,57 @@ body.dark .mobile-nav-links a {
 
     .mobile-menu {
         width: 280px;
+    }
+
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        padding-bottom: 5rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        order: 2;
+    }
+
+    .hero-animation {
+        order: 1;
+        height: 250px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .floating-card {
+        padding: 1rem;
+    }
+
+    .card-1 {
+        width: 80px;
+        height: 60px;
+    }
+
+    .card-2 {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card-3 {
+        width: 65px;
+        height: 65px;
+    }
+
+    .card-4 {
+        width: 75px;
+        height: 50px;
+    }
+
+    .card-5 {
+        width: 100px;
+        height: 100px;
+        font-size: 1.2rem;
     }
 }
 
